@@ -24,6 +24,7 @@
                 "Estética dental" => Url.Content("~/fotos/Medico_Estetica_Dental.jpg"),
                 "Radiografías" => Url.Content("~/fotos/Medico_Radiografias.jpg"),
                 "Odontopediatría" => Url.Content("~/fotos/Medico_Odontopediatrias.jpg"),
+                _ => Url.Content("~/fotos/Medico_Odontopediatrias.jpg")
             };
             <div class="staff-card">
                 <img src="@img" alt="@($"{medico.Nombre} {medico.Apellido}")" class="staff-photo" asp-append-version="true" />
