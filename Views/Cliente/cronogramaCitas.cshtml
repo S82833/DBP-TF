@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Citas Médicas</title>
+    <link rel="stylesheet" href="~/css/Odontobrass-Citas.css">
+</head>
+<body>
+    <div class="contenedor-citas">
+        <h2>Historial de Citas Médicas</h2>
+
+        <table class="tabla-citas">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Médico</th>
+                    <th>Especialidad</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>05/10/2025</td>
+                    <td>10:00 AM</td>
+                    <td>Dr. Juan Pérez</td>
+                    <td>Cardiología</td>
+                    <td>Programada</td>
+                    <td>
+                        <a href="reprogramarCita.cshtml" class="btn-reprogramar">Reprogramar</a>
+                        <a href="cancelarCita.cshtml" class="btn-cancelar">Cancelar</a>
+                    </td>
+                </tr>
+                <!-- Otra cita -->
+                <tr>
+                    <td>12/10/2025</td>
+                    <td>02:30 PM</td>
+                    <td>Dra. María López</td>
+                    <td>Dermatología</td>
+                    <td>Programada</td>
+                    <td>
+                        <a href="reprogramarCita.cshtml" class="btn-reprogramar">Reprogramar</a>
+                        <a href="cancelarCita.cshtml" class="btn-cancelar">Cancelar</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20/09/2025</td>
+                    <td>09:00 AM</td>
+                    <td>Dr. Carlos Ramírez</td>
+                    <td>Oftalmología</td>
+                    <td>Realizada</td>
+                    <td>
+                        <button class="btn-disabled" disabled>Reprogramar</button>
+                        <button class="btn-disabled" disabled>Cancelar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ProyectoDBP.Models.StaffMedico>
+
+@{
+    ViewData["Title"] = "Staff Médico";
+}
+
+<!-- Estilos del staff -->
+<link rel="stylesheet" href="~/css/StyleMedicos.css" asp-append-version="true" />
+
+<section class="container section">
+    <h2 class="section-title">Nuestro <span class="accent">Staff Médico</span></h2>
+    <p class="lead">Conoce a nuestros especialistas en cada área odontológica.</p>
+
+    <div class="staff-grid">
+        @foreach (var medico in Model)
+        {
+            // Determinar la imagen según especialidad (usa tus nombres exactos)
+            var img = medico.Especialidad switch
+            {
+                "Ortodoncia" => Url.Content("~/fotos/Medico_Ortodoncia.jpg"),
+                "Endodoncia" => Url.Content("~/fotos/Medico_Endodoncia.jpg"),
+                "Periodoncia" => Url.Content("~/fotos/Medico_Periodoncia.jpg"),
+                "Implantes" => Url.Content("~/fotos/Medico_Implantes.jpg"),
+                "Estética dental" => Url.Content("~/fotos/Medico_Estetica_Dental.jpg"),
+                "Radiografías" => Url.Content("~/fotos/Medico_Radiografias.jpg"),
+                "Odontopediatría" => Url.Content("~/fotos/Medico_Odontopediatrias.jpg"),
+            };
+            <div class="staff-card">
+                <img src="@img" alt="@($"{medico.Nombre} {medico.Apellido}")" class="staff-photo" asp-append-version="true" />
+
+                <div class="staff-info">
+                    <h5 class="staff-name">Dr(a). @medico.Nombre @medico.Apellido</h5>
+                    <p class="staff-role">@medico.Especialidad</p>
+                    <div class="staff-buttons">
+                        <a class="btn btn-outline-primary"
+                           asp-controller="ServiciosStaff"
+                           asp-action="Medico"
+                           asp-route-id="@medico.IdStaffMedico">
+                            Ver más
+                        </a>
+
+                        <a class="btn btn-success"
+                           asp-controller="Cliente"
+                           asp-action="agendarCita"
+                           asp-route-especialidad="@medico.Especialidad"
+                           asp-route-idMedico="@medico.IdStaffMedico">
+                            Agendar cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+

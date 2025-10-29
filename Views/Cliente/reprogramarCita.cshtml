@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Resumen de la Cita</title>
+    <link rel="stylesheet" href="~/css/Odontobrass-Citas.css">
+</head>
+<body>
+    <h1>Resumen de la Cita</h1>
+
+    <p><strong>Especialidad:</strong> (se mostrará aquí)</p>
+    <p><strong>Médico:</strong> (se mostrará aquí)</p>
+    <br>
+    <br>
+
+    <label for="fecha">Fecha</label>
+    <input type="date" id="fecha" name="fecha" required>
+    <br>
+    <br>
+
+    <label for="hora">Hora</label>
+    <input type="time" id="hora" name="hora" required>
+    <br>
+    <br>
+
+    <div class="acciones">
+        <button type="submit" formaction="resumenCita.cshtml">Confirmar</button>
+        <button type="submit" formaction="CancelarCita.html">Cancelar</button>
+    </div>
+</body>
+</html>

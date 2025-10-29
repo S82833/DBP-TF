@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Registrarse";
+}
+
+<link rel="stylesheet" href="~/css/odontobrass-account.css" />
+
+<div class="container section">
+    <h2 class="section-title">Crear <span class="accent">Cuenta</span></h2>
+    <p class="lead">Regístrate para reservar tus citas de manera rápida y sencilla.</p>
+
+    <div class="form-card">
+        <form asp-action="Register" method="post">
+            <div class="form-group">
+                <label for="DNI">DNI</label>
+                <input type="text" id="DNI" name="DNI" maxlength="8" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="FullName">Nombre completo</label>
+                <input type="text" id="FullName" name="FullName" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Correo electrónico</label>
+                <input type="email" id="Email" name="Email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Contraseña</label>
+                <input type="password" id="Password" name="Password" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="FechaNacimiento">Fecha de nacimiento</label>
+                <input type="date" id="FechaNacimiento" name="FechaNacimiento" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Sexo">Sexo</label>
+                <select id="Sexo" name="Sexo" class="form-control" required>
+                    <option value="">Seleccione...</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="O">Otro</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-block">Registrarse</button>
+        </form>
+
+        <p class="form-footer">
+            ¿Ya tienes cuenta?
+            <a href="/Account/Login">Inicia sesión</a>
+        </p>
+    </div>
+</div>

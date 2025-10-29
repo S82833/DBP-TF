@@ -1,0 +1,206 @@
+﻿@{
+    ViewData["Title"] = "Inicio | Odontobrass";
+    Layout = "_Layout";
+}
+
+<!-- Título y bajada -->
+<section class="section">
+    <div class="container">
+        <h1 class="section-title section-title--left">Clínica Odontobrass</h1>
+        <p class="lead lead--left">Cuidado odontológico con tecnología y calidez humana.</p>
+    </div>
+</section>
+
+<!-- AGENDA TU CITA (reemplaza a los chips e imagen anterior) -->
+<section class="hero-split section">
+    <div class="container hero-split__grid">
+        <div class="hero-split__copy">
+            <h2 class="section-title">Agenda tu cita <span class="accent">en minutos</span></h2>
+            <p class="lead">Elige especialidad, día y hora. Te confirmamos por correo.</p>
+            <a class="btn" asp-controller="Cliente" asp-action="agendarCita">Agendar cita</a>
+        </div>
+        <figure class="hero-split__media">
+            <img class="hero-img"
+                 src="~/img/hero-odontobrass.png"
+                 asp-append-version="true"
+                 alt="Paciente sonriendo en Odontobrass" />
+        </figure>
+    </div>
+</section>
+
+<!-- SERVICIOS ODONTOLÓGICOS -->
+<section class="services section">
+    <div class="container">
+        <h2 class="section-title">Servicios <span class="accent">odontológicos</span></h2>
+        <p class="lead">Tratamientos para todas las etapas y necesidades.</p>
+
+        <div class="grid grid-4">
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/odontologia-general.png" asp-append-version="true" alt="Odontología general">
+                <h5>Odontología general</h5><p>Restauraciones y limpiezas.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/Ortodoncia.jpg" asp-append-version="true" alt="Ortodoncia">
+                <h5>Ortodoncia</h5><p>Brackets y alineadores.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/endodoncia.jpeg" asp-append-version="true" alt="Endodoncia">
+                <h5>Endodoncia</h5><p>Tratamiento de conductos.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/periodoncia.jpg" asp-append-version="true" alt="Periodoncia">
+                <h5>Periodoncia</h5><p>Salud de encías.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/implantes.jpeg" asp-append-version="true" alt="Implantes">
+                <h5>Implantes</h5><p>Reemplazo de piezas dentales.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/estetica-dental.jpg" asp-append-version="true" alt="Estética dental">
+                <h5>Estética dental</h5><p>Blanqueamiento y carillas.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/radiografias.jpeg" asp-append-version="true" alt="Radiografías">
+                <h5>Radiografías</h5><p>Imágenes digitales.</p>
+            </a>
+            <a class="svc-card" asp-controller="ServiciosStaff" asp-action="Servicios">
+                <img class="svc-thumb" src="~/img/servicios/odontopediatria.jpeg" asp-append-version="true" alt="Odontopediatría">
+                <h5>Odontopediatría</h5><p>Atención para niños.</p>
+            </a>
+        </div>
+
+        <div class="cta-row" style="margin-top:1rem">
+            <a class="btn" asp-controller="ServiciosStaff" asp-action="Servicios">Ver todos los servicios</a>
+        </div>
+    </div>
+</section>
+
+<!-- STAFF PREVIEW -->
+@{
+    var medicos = ViewBag.Medicos as List<ProyectoDBP.Models.StaffMedico> ?? new();
+    string ImgPorEspecialidad(string esp) => esp switch
+    {
+        "Ortodoncia" => Url.Content("~/fotos/Medico_Ortodoncia.jpg"),
+        "Endodoncia" => Url.Content("~/fotos/Medico_Endodoncia.jpg"),
+        "Periodoncia" => Url.Content("~/fotos/Medico_Periodoncia.jpg"),
+        "Implantes" => Url.Content("~/fotos/Medico_Implantes.jpg"),
+        "Estética dental" => Url.Content("~/fotos/Medico_Estetica_Dental.jpg"),
+        "Radiografías" => Url.Content("~/fotos/Medico_Radiografias.jpg"),
+        "Odontopediatría" => Url.Content("~/fotos/Medico_Odontopediatrias.jpg"),
+        _ => Url.Content("~/fotos/Medico_Ortodoncia.jpg")
+    };
+}
+
+<section class="container section">
+    <h2 class="section-title">Conoce a nuestro <span class="accent">Staff Médico</span></h2>
+
+    <div class="med-carousel">
+        <button class="med-nav med-prev" type="button" aria-label="Anterior">‹</button>
+
+        <div class="med-track" id="medTrack">
+            @foreach (var m in medicos)
+            {
+                <article class="med-card">
+                    <img src="@ImgPorEspecialidad(m.Especialidad)"
+                         alt="@($"{m.Nombre} {m.Apellido}")"
+                         class="med-img" />
+                    <div class="med-info">
+                        <h5 class="med-name">Dr(a). @m.Nombre @m.Apellido</h5>
+                        <p class="med-esp">@m.Especialidad</p>
+                        <div class="med-actions">
+                            <a class="btn btn-outline-primary"
+                               asp-controller="ServiciosStaff" asp-action="Medico"
+                               asp-route-id="@m.IdStaffMedico">Ver más</a>
+                            <a class="btn btn-success"
+                               asp-controller="Cliente" asp-action="agendarCita"
+                               asp-route-especialidad="@m.Especialidad"
+                               asp-route-idMedico="@m.IdStaffMedico">Agendar cita</a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+
+        <button class="med-nav med-next" type="button" aria-label="Siguiente">›</button>
+    </div>
+</section>
+
+
+
+
+<!-- UBICACIÓN -->
+<section class="location section">
+    <div class="container location__inner">
+        <div>
+            <h3>Encuéntranos</h3>
+            <p>Nuestra sede está ubicada en:</p>
+            <p>Av. Coronel Reynaldo Vivanco 595, Lima 15039<br />Central telefónica: +51 946 858 357</p>
+            <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Ver en Google Maps</a>
+        </div>
+        <div class="location__art" aria-hidden="true"></div>
+    </div>
+</section>
+
+<!-- APP ODONTOBRASS -->
+<section class="app section">
+    <div class="container app__inner">
+        <div>
+            <h2 class="section-title">Cuida tu salud y <span class="accent">también tu tiempo</span></h2>
+            <ul class="check-list">
+                <li>Agenda tus citas médicas en cualquier momento.</li>
+                <li>Accede a tu historial de citas.</li>
+                <li>Visualiza tus recetas y resultados de laboratorio.</li>
+                <li>Usa tus programas de salud Odontobrass para atenderte.</li>
+            </ul>
+            <a class="btn" href="#" role="button">Descargar App Odontobrass</a>
+        </div>
+        <div>
+            <img class="app__phone" src="~/img/Aplicacion.png" asp-append-version="true" alt="App Odontobrass en tu celular" />
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER GRANDE tipo Auna -->
+<section class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <h4>Nosotros</h4>
+            <a href="#">Quiénes somos</a>
+            <a href="#">Trabaja con nosotros</a>
+        </div>
+        <div>
+            <h4>Mas de nosotros</h4>
+            <a href="#">Blog informativo</a>
+        </div>
+        <div>
+            <h4>Informacion Legal</h4>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos y condiciones</a>
+        </div>
+        <div>
+            <h4>Estamos para ayudarte</h4>
+            <p>Accede al directorio de nuestra sede.</p>
+            <div class="footer-cta">
+                <strong>¿Necesitas ayuda?</strong>
+                <p>Escríbenos y te contactamos.</p>
+                <a class="btn btn-outline" href="#">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        (function(){
+          const track = document.getElementById('medTrack');
+          const prev = document.querySelector('.med-prev');
+          const next = document.querySelector('.med-next');
+
+          // cantidad a desplazar (ancho de card aprox). Ajusta si tus cards son más anchas
+          const step = 320;
+
+          prev?.addEventListener('click', () => { track.scrollBy({ left: -step, behavior: 'smooth' }); });
+          next?.addEventListener('click', () => { track.scrollBy({ left:  step, behavior: 'smooth' }); });
+        })();
+    </script>
+}

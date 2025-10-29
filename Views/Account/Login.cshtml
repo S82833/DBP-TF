@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<link rel="stylesheet" href="~/css/odontobrass-account.css" />
+
+<div class="container section">
+    <h2 class="section-title">Iniciar <span class="accent">Sesión</span></h2>
+    <p class="lead">Accede a tu cuenta de Odontobrass y gestiona tus citas fácilmente.</p>
+
+    <div class="form-card">
+        <form asp-action="Login" method="post">
+
+            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+
+            <div class="form-group">
+                <label for="Email">Correo electrónico</label>
+                <input type="email" id="Email" name="Email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Contraseña</label>
+                <input type="password" id="Password" name="Password" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-block">Ingresar</button>
+        </form>
+
+        <p class="form-footer">
+            ¿No tienes cuenta?
+            <a href="/Account/Register">Regístrate aquí</a>
+        </p>
+    </div>
+</div>

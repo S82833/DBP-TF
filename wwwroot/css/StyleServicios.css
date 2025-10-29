@@ -1,0 +1,217 @@
+﻿
+/* 1) Variables y base */
+:root {
+    --blue: #147bd1; /* Azul clínico */
+    --teal: #0fb3a4; /* Acento/hover */
+    --green: #22c55e; /* Verde salud secundario */
+    --text: #0f172a; /* Texto principal */
+    --muted: #475569; /* Texto secundario */
+    --bg: #f6f8fb; /* Fondo general de la página */
+    --white: #ffffff; /* Fondo de cards y secciones */
+    --radius: 18px; /* Bordes redondeados */
+    --shadow: 0 18px 40px rgba(15,23,42,.08); /* Sombra cards */
+    --line: #e6ecf5; /* Líneas y bordes */
+}
+
+/* Reset y base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+/* 2) Navbar */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 1rem;
+}
+
+.nav__link {
+    color: #1f2b3a;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+    .nav__link:hover {
+        color: var(--teal);
+    }
+
+/* 3) Hero */
+.hero {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    background-size: cover;
+    background-position: center;
+    background-image: url('/fotos/fondoServicios.jpg');
+    margin-bottom: 4rem;
+}
+
+/* 4) Secciones y títulos */
+.section-title {
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-size: clamp(1.6rem,3vw,2.2rem);
+}
+
+.lead {
+    text-align: center;
+    color: var(--muted);
+    max-width: 860px;
+    margin: 0 auto 2rem auto;
+}
+
+/* 5) Cards genéricas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card {
+    width: 260px;
+    height:400px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(2,6,23,.05);
+    overflow: hidden;
+    margin-left:0.5rem;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-body h5.card-title {
+    color: #263b6e;
+}
+
+.card-body h6 {
+    color: var(--muted);
+    margin-top: 0.9rem;
+    height: 15%;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 6) Botones */
+.btn {
+    display: inline-block;
+    padding: .95rem 1.15rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+    .btn:hover {
+        filter: brightness(1.06);
+    }
+
+.btn-outline {
+    background: transparent;
+    color: var(--teal);
+    border: 2px solid var(--teal);
+}
+
+/* 7) Footer */
+.footer {
+    background: #0d2235;
+    color: #c8d6e5;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+    .footer a {
+        color: #aee;
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+/* 8) Imagen destacada opcional */
+.featured-image {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 1rem;
+}
+
+/* 9) Responsive básico */
+@media (max-width: 1024px) {
+    .cards-container {
+        gap: .8rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+.card-wrapper {
+    position: relative;
+    display: inline-block;
+    justify-content:center;
+    margin-bottom: 4rem;
+}
+
+.card-badge {
+    position: absolute;
+    top: -15px; /* levanta el círculo por encima del card */
+    left: 50%; /* lo centra horizontalmente */
+    transform: translateX(-50%); /* ajusta el centro exacto */
+    width: 50px;
+    height: 50px;
+    background: var(--teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+}
+
+
+

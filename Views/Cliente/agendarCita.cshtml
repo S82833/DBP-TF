@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Agendar Cita";
+}
+<link rel="stylesheet" href="~/css/Odontobrass-Citas.css" asp-append-version="true" />
+
+<div class="container section">
+    <div class="form-card">
+
+        <div class="form-group">
+            <label>Especialidad</label>
+            @Html.DropDownList(
+            "Especialidad",                          // name del campo
+                        (SelectList)ViewBag.Especialidades,      // datos + seleccionado
+                        "-- Seleccione --",
+                        new { @class = "form-control", id = "Especialidad" }
+                        )
+        </div>
+
+        <div class="form-group">
+            <label>Médico</label>
+            @Html.DropDownList(
+                        "Medico",
+                        (SelectList)ViewBag.Medicos,
+                        "-- Seleccione --",
+                        new { @class = "form-control", id = "Medico" }
+                        )
+        </div>
+
+        <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" name="Fecha" id="Fecha" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Hora</label>
+            <input type="time" name="Hora" id="Hora" class="form-control" />
+        </div>
+
+        <div class="btn-row">
+            <button class="btn btn-primary">Confirmar</button>
+            <a class="btn btn-secondary" asp-controller="Inicio" asp-action="Index">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Cuando cambia la especialidad, recarga la página con el parámetro para filtrar médicos
+        document.getElementById('Especialidad')?.addEventListener('change', function() {
+          const esp = this.value;
+          const url = new URL(window.location.href);
+          url.searchParams.set('especialidad', esp);
+          // si había idMedico, lo limpiamos porque ya no aplica al cambiar especialidad
+          url.searchParams.delete('idMedico');
+          window.location.href = url.toString();
+        });
+    </script>
+}
+

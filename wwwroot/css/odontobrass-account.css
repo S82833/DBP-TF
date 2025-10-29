@@ -1,0 +1,126 @@
+﻿:root {
+    --blue: #147bd1; /* azul clínico */
+    --teal: #0fb3a4; /* acento verdoso */
+    --green: #22c55e; /* verde salud */
+    --text: #0f172a; /* texto principal */
+    --muted: #475569; /* texto secundario */
+    --bg: #f6f8fb; /* fondo */
+    --white: #ffffff;
+    --radius: 18px;
+    --shadow: 0 18px 40px rgba(15,23,42,.08);
+    --line: #e6ecf5;
+}
+
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 3.5rem 0;
+}
+
+.section-title {
+    margin: 0 0 .8rem 0;
+    text-align: center;
+    font-size: clamp(1.6rem,3vw,2.2rem);
+}
+
+    .section-title .accent {
+        color: var(--teal);
+    }
+
+.lead {
+    text-align: center;
+    color: var(--muted);
+    max-width: 860px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Tarjeta de formulario */
+.form-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Inputs y grupos */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: .4rem;
+        color: var(--text);
+    }
+
+.form-control {
+    width: 100%;
+    padding: .8rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    font-size: 1rem;
+    transition: border-color .2s ease;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--teal);
+        box-shadow: 0 0 0 3px rgba(15, 179, 164, .15);
+    }
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: .95rem 1.15rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: filter .2s ease;
+}
+
+    .btn:hover {
+        filter: brightness(1.06);
+    }
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Footer del formulario */
+.form-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: .9rem;
+}
+
+    .form-footer a {
+        color: var(--teal);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }

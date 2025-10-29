@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Servicios";
+}
+
+<link rel="stylesheet" href="~/css/StyleServicios.css" asp-append-version="true" />
+
+<section class="container section">
+    <h2 class="section-title">Servicios <span class="accent">odontológicos</span></h2>
+    <p class="lead">Tratamientos para todas las etapas y necesidades.</p>
+
+    <div class="cards-container">
+
+        <div class="card-wrapper">
+            <div class="card-badge">1</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/Ortodoncia.jpg" alt="Ortodoncia" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Ortodoncia</h5>
+                    <h6>Brackets y alineadores.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Ortodoncia">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">2</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/endodoncia.jpeg" alt="Endodoncia" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Endodoncia</h5>
+                    <h6>Tratamiento de conductos.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Endodoncia">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">3</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/periodoncia.jpg" alt="Periodoncia" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Periodoncia</h5>
+                    <h6>Salud de encías.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Periodoncia">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">4</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/implantes.jpeg" alt="Implantes" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Implantes</h5>
+                    <h6>Reemplazo de piezas dentales.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Implantes">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">5</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/estetica-dental.jpg" alt="Estética dental" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Estética dental</h5>
+                    <h6>Blanqueamiento y carillas.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Estética dental">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">6</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/radiografias.jpeg" alt="Radiografías" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Radiografías</h5>
+                    <h6>Imágenes digitales.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Radiografías">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">7</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/odontopediatria.jpeg" alt="Odontopediatría" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Odontopediatría</h5>
+                    <h6>Atención para niños.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Odontopediatría">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card-badge">8</div>
+            <div class="card">
+                <img class="card-img-top" src="~/img/servicios/odontologia-general.png" alt="Odontología general" asp-append-version="true" />
+                <div class="card-body">
+                    <h5 class="card-title">Odontología general</h5>
+                    <h6>Restauraciones y limpiezas.</h6>
+                    <a class="btn btn-success mt-2"
+                       asp-controller="Cliente" asp-action="agendarCita"
+                       asp-route-especialidad="Odontología General">
+                        Reservar cita
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

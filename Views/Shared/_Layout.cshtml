@@ -1,0 +1,97 @@
+﻿@* Views/Shared/_Layout.cshtml *@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProyectoDBP</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/odontobrass-inicio.css" asp-append-version="true" />
+
+    <!-- Favicon (diente) -->
+    <link rel="icon" type="image/png" href="~/img/Portada.png" asp-append-version="true" />
+</head>
+<body>
+    <!-- TOPBAR principal -->
+    <header class="topbar">
+        <div class="container topbar__inner d-flex align-items-center justify-content-between">
+            <!-- Logo / Marca -->
+            <a asp-controller="Inicio" asp-action="Index" class="topbar__brand d-flex align-items-center gap-4 text-decoration-none">
+                <img src="~/img/Logo.jpeg" asp-append-version="true" alt="Odontobrass" style="height:28px" />
+                <span class="fw-semibold text-dark">ProyectoDBP</span>
+            </a>
+
+            @{
+                var userName = Context.Session.GetString("UserName");
+                var userRol = Context.Session.GetInt32("UserRol");
+            }
+
+            <!-- Menú -->
+            <nav class="topbar__menu d-flex align-items-center gap-4">
+                <a asp-controller="Inicio" asp-action="Index" class="topbar__link">Inicio</a>
+                <a asp-controller="ServiciosStaff" asp-action="Servicios" class="topbar__link">Servicios</a>
+                <a asp-controller="ServiciosStaff" asp-action="StaffMedico" class="topbar__link">Staff médico</a>
+
+                <!-- Menú Citas (visible para todos los roles logueados) -->
+                <div class="dropdown">
+                    <a class="topbar__link dropdown-toggle" href="#" id="citasDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Citas
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="citasDropdown">
+                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="agendarCita">Agendar cita</a></li>
+                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="cronogramaCitas">Cronograma de citas</a></li>
+                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="reprogramarCita">Reprogramar cita</a></li>
+                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="cancelarCita">Cancelar cita</a></li>
+                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="resumenCita">Resumen de cita</a></li>
+                    </ul>
+                </div>
+
+                @if (string.IsNullOrEmpty(userName))
+                {
+                    <!-- Si NO hay sesión iniciada -->
+                    <a asp-controller="Account" asp-action="Login" class="topbar__link">Iniciar sesión</a>
+                    <a asp-controller="Account" asp-action="Register" class="topbar__btn">Registrarse</a>
+                }
+                else
+                {
+                    <!-- Si hay sesión iniciada -->
+                    <div class="dropdown">
+                        <a class="topbar__link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @userName
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                }
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Contenido -->
+    <main class="page-wrap">
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer section">
+        <div class="container d-flex justify-content-between align-items-center">
+            <small>© @DateTime.Now.Year · ProyectoDBP</small>
+            <a asp-controller="Home" asp-action="Privacy" class="text-decoration-none" style="color:#aee">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- JS (necesario para el dropdown) -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
