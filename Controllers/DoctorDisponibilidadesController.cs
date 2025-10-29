@@ -137,18 +137,15 @@ namespace ProyectoDBP.Controllers
                 return View("Gestionar", vmIntervalo);
             }
 
-            var disponibilidadesExistentes = await _context.DoctorDisponibilidades
+            var existeTraslape = await _context.DoctorDisponibilidades
                 .Where(d => d.IdStaffMedico == form.IdStaffMedico && d.DiaSemana == form.DiaSemana)
                 .AsNoTracking()
-                .Select(d => new { d.HoraInicio, d.HoraFin })
-                .ToListAsync();
-
-            var existeTraslape = disponibilidadesExistentes.Any(d =>
-            {
-                var inicioExistente = TimeSpan.Parse(d.HoraInicio);
-                var finExistente = TimeSpan.Parse(d.HoraFin);
-                return horaInicio < finExistente && inicioExistente < horaFin;
-            });
+                .AnyAsync(d =>
+                {
+                    var inicioExistente = TimeSpan.Parse(d.HoraInicio);
+                    var finExistente = TimeSpan.Parse(d.HoraFin);
+                    return horaInicio < finExistente && inicioExistente < horaFin;
+                });
 
             if (existeTraslape)
             {
