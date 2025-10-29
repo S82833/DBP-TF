@@ -65,7 +65,8 @@ namespace ProyectoDBP.Controllers
                 var medico = await _context.StaffMedico
                     .AsNoTracking()
                     .FirstOrDefaultAsync(m =>
-                        (m.Nombre + " " + m.Apellido).Equals(nombreSesion, StringComparison.InvariantCultureIgnoreCase));
+                        (m.Nombre + " " + m.Apellido).ToLower()
+                        == (nombreSesion ?? string.Empty).ToLower());
 
                 if (medico != null)
                 {
