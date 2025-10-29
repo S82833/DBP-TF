@@ -1,0 +1,54 @@
+@model IEnumerable<ProyectoDBP.ViewModels.DoctorDisponibilidadResumenViewModel>
+@{
+    ViewData["Title"] = "Disponibilidad de médicos";
+}
+
+<div class="container section">
+    <h2 class="mb-4">Gestionar disponibilidades</h2>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-warning">@TempData["Error"]</div>
+    }
+
+    <p class="text-muted">Selecciona tu perfil para registrar o actualizar tus horarios de atención.</p>
+
+    <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Médico</th>
+                    <th>Especialidad</th>
+                    <th class="text-center">Horarios registrados</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">No hay médicos registrados.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var medico in Model)
+                    {
+                        <tr>
+                            <td>@medico.NombreCompleto</td>
+                            <td>@medico.Especialidad</td>
+                            <td class="text-center">@medico.DisponibilidadesRegistradas</td>
+                            <td class="text-end">
+                                <a class="btn btn-primary btn-sm"
+                                   asp-action="Gestionar"
+                                   asp-route-idStaffMedico="@medico.IdStaffMedico">
+                                    Gestionar horarios
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+@model ProyectoDBP.ViewModels.DoctorDisponibilidadGestionViewModel
+@{
+    ViewData["Title"] = "Gestionar horarios";
+}
+
+<div class="container section">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="mb-1">Horarios de atención</h2>
+            <p class="text-muted mb-0">Dr(a). @Model.DoctorNombre</p>
+        </div>
+        <a class="btn btn-outline-secondary" asp-action="Index">
+            &laquo; Volver al listado
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <p class="mb-1">Corrige los siguientes errores:</p>
+            @Html.ValidationSummary(excludePropertyErrors: true)
+        </div>
+    }
+
+    <div class="card mb-5">
+        <div class="card-header bg-primary text-white">Registrar nuevo horario</div>
+        <div class="card-body">
+            <form asp-action="Crear" method="post" class="row g-3">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="Form.IdStaffMedico" />
+
+                <div class="col-md-4">
+                    <label asp-for="Form.DiaSemana" class="form-label"></label>
+                    <select asp-for="Form.DiaSemana" asp-items="Model.DiasSemana" class="form-select"></select>
+                    <span asp-validation-for="Form.DiaSemana" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Form.HoraInicio" class="form-label"></label>
+                    <select asp-for="Form.HoraInicio" asp-items="Model.HorariosInicio" class="form-select"></select>
+                    <span asp-validation-for="Form.HoraInicio" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Form.HoraFin" class="form-label"></label>
+                    <select asp-for="Form.HoraFin" asp-items="Model.HorariosFin" class="form-select"></select>
+                    <span asp-validation-for="Form.HoraFin" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-success">Agregar horario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h3 class="mb-3">Disponibilidades registradas</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Hora inicio</th>
+                    <th>Hora fin</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Disponibilidades.Any())
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted">Aún no registras horarios.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var disponibilidad in Model.Disponibilidades)
+                    {
+                        <tr>
+                            <td>@disponibilidad.DiaSemana</td>
+                            <td>@disponibilidad.HoraInicio</td>
+                            <td>@disponibilidad.HoraFin</td>
+                            <td class="text-end">
+                                <form asp-action="Eliminar" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@disponibilidad.IdDoctorDisponibilidad" />
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"
+                                            onclick="return confirm('¿Deseas eliminar este horario?');">
+                                        Eliminar
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
