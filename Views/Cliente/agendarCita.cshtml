@@ -27,32 +27,27 @@
                         )
         </div>
 
-        @if (ViewBag.Horarios != null)
-        {
-            <div class="form-group">
-                <label>Horario disponible</label>
-                @Html.DropDownList(
-                            "HorarioSeleccionado",
-                            (SelectList)ViewBag.Horarios,
-                            "-- Seleccione --",
-                            new { @class = "form-control", id = "Horario" }
-                            )
-            </div>
-        }
-        else if (!string.IsNullOrEmpty(mensajeHorario))
-        {
-            <div class="alert alert-warning">@mensajeHorario</div>
-        }
-
         <div class="form-group">
             <label>Fecha</label>
             <input type="date" name="Fecha" id="Fecha" class="form-control" />
         </div>
 
-        <div class="form-group">
-            <label>Hora</label>
-            <input type="time" name="Hora" id="Hora" class="form-control" />
+        @if (ViewBag.Horarios != null)
+        {
+            <div class="form-group">
+                <label>Horario disponible</label>
+                @Html.DropDownList(
+                "HorarioSeleccionado",
+                        (SelectList)ViewBag.Horarios,
+                        "-- Seleccione --",
+                        new { @class = "form-control", id = "Horario" }
+                        )
         </div>
+                }
+        else if (!string.IsNullOrEmpty(mensajeHorario))
+        {
+            <div class="alert alert-warning">@mensajeHorario</div>
+        }
 
         <div class="btn-row">
             <button class="btn btn-primary">Confirmar</button>
@@ -87,5 +82,39 @@
           }
           window.location.href = url.toString();
         });
+
+        const fechaInput = document.getElementById("Fecha");
+        const medicoSelect = document.getElementById("Medico");
+        const horarioContainer = document.getElementById("Horario");
+
+        fechaInput?.addEventListener("change", async function () {
+            const fecha = this.value;
+            const idMedico = medicoSelect.value;
+
+            if (!fecha || !idMedico) return;
+
+            const url = `/Cliente/ObtenerHorarios?idMedico=${idMedico}&fecha=${fecha}`;
+            const response = await fetch(url);
+            const data = await response.json();
+
+            const horarioDiv = document.getElementById("Horario");
+            horarioDiv.innerHTML = ""; // limpiar
+
+            if (data.success) {
+                // llenar el dropdown con las horas
+                data.horarios.forEach(hora => {
+                    const opt = document.createElement("option");
+                    opt.value = hora;
+                    opt.textContent = hora;
+                    horarioDiv.appendChild(opt);
+                });
+            } else {
+                const alert = document.createElement("div");
+                alert.className = "alert alert-warning mt-2";
+                alert.textContent = data.mensaje;
+                horarioDiv.parentNode.appendChild(alert);
+            }
+        });
+
     </script>
 }

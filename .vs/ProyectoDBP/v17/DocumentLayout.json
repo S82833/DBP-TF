@@ -1,58 +1,74 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\",
+  "WorkspaceRootPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\views\\cliente\\agendarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\cliente\\agendarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\cliente\\agendarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\views\\serviciosstaff\\staffmedico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\doctordisponibilidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\doctordisponibilidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\serviciosstaff\\staffmedico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\serviciosstaff\\staffmedico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\models\\serviciostaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\models\\serviciostaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:models\\serviciostaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\models\\staffmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\models\\staffmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:models\\staffmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\views\\inicio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\inicio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\inicio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\wwwroot\\css\\odontobrass-inicio.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\wwwroot\\css\\odontobrass-inicio.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:wwwroot\\css\\odontobrass-inicio.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp1\\proyectodbp\\controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\migrations\\20251029005128_migration03.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:migrations\\20251029005128_migration03.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,37 +102,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "DoctorDisponibilidadesController.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\DoctorDisponibilidadesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DoctorDisponibilidadesController.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\DoctorDisponibilidadesController.cs",
+              "RelativeToolTip": "Controllers\\DoctorDisponibilidadesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T02:00:16.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\appsettings.json",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-10-29T00:23:41.939Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-29T00:23:38.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-29T00:23:38.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "reprogramarCita.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\Cliente\\reprogramarCita.cshtml",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\reprogramarCita.cshtml",
               "RelativeDocumentMoniker": "Views\\Cliente\\reprogramarCita.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\Cliente\\reprogramarCita.cshtml",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\reprogramarCita.cshtml",
               "RelativeToolTip": "Views\\Cliente\\reprogramarCita.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -124,11 +152,73 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T03:01:50.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "agendarCita.cshtml",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\agendarCita.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cliente\\agendarCita.cshtml",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\agendarCita.cshtml",
+              "RelativeToolTip": "Views\\Cliente\\agendarCita.cshtml",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAkwHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T03:37:44.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T00:49:23.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20251029005128_Migration03.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Migrations\\20251029005128_Migration03.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251029005128_Migration03.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Migrations\\20251029005128_Migration03.cs",
+              "RelativeToolTip": "Migrations\\20251029005128_Migration03.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T00:51:28.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T00:49:35.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "StaffMedico.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\ServiciosStaff\\StaffMedico.cshtml",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\ServiciosStaff\\StaffMedico.cshtml",
               "RelativeDocumentMoniker": "Views\\ServiciosStaff\\StaffMedico.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\ServiciosStaff\\StaffMedico.cshtml",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\ServiciosStaff\\StaffMedico.cshtml",
               "RelativeToolTip": "Views\\ServiciosStaff\\StaffMedico.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -136,11 +226,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "odontobrass-inicio.css",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\wwwroot\\css\\odontobrass-inicio.css",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\wwwroot\\css\\odontobrass-inicio.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\odontobrass-inicio.css",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\wwwroot\\css\\odontobrass-inicio.css",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\wwwroot\\css\\odontobrass-inicio.css",
               "RelativeToolTip": "wwwroot\\css\\odontobrass-inicio.css",
               "ViewState": "AgIAAJ4DAAAAAAAAAAAswMkDAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -148,11 +238,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\Inicio\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Inicio\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Inicio\\Index.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\Inicio\\Index.cshtml",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Inicio\\Index.cshtml",
               "RelativeToolTip": "Views\\Inicio\\Index.cshtml",
               "ViewState": "AgIAAEcAAAAAAAAAAAAiwFkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -160,11 +250,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "InicioController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Controllers\\InicioController.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\InicioController.cs",
               "RelativeDocumentMoniker": "Controllers\\InicioController.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Controllers\\InicioController.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\InicioController.cs",
               "RelativeToolTip": "Controllers\\InicioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -172,36 +262,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Datos\\ApplicationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Datos\\ApplicationDBContext.cs",
               "RelativeDocumentMoniker": "Datos\\ApplicationDBContext.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Datos\\ApplicationDBContext.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Datos\\ApplicationDBContext.cs",
               "RelativeToolTip": "Datos\\ApplicationDBContext.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAiwBcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T05:36:01.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T05:36:01.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "Controllers\\ClienteController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwEAAAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T03:01:50.174Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "StaffMedico.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Models\\StaffMedico.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\StaffMedico.cs",
               "RelativeDocumentMoniker": "Models\\StaffMedico.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Models\\StaffMedico.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\StaffMedico.cs",
               "RelativeToolTip": "Models\\StaffMedico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -209,11 +286,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Servicio.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Models\\Servicio.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\Servicio.cs",
               "RelativeDocumentMoniker": "Models\\Servicio.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Models\\Servicio.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\Servicio.cs",
               "RelativeToolTip": "Models\\Servicio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -221,27 +298,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "ServicioStaff.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Models\\ServicioStaff.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\ServicioStaff.cs",
               "RelativeDocumentMoniker": "Models\\ServicioStaff.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Models\\ServicioStaff.cs",
+              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\ServicioStaff.cs",
               "RelativeToolTip": "Models\\ServicioStaff.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-22T05:33:28.732Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "agendarCita.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\Cliente\\agendarCita.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cliente\\agendarCita.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\Views\\Cliente\\agendarCita.cshtml",
-              "RelativeToolTip": "Views\\Cliente\\agendarCita.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T03:37:44.272Z"
             }
           ]
         }

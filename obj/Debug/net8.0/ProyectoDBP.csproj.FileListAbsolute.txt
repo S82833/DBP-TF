@@ -309,3 +309,4 @@ C:\Users\svald\OneDrive - Universidad San Ignacio de Loyola\Usil tareas 2025-02\
 C:\Users\svald\OneDrive - Universidad San Ignacio de Loyola\Usil tareas 2025-02\Desarrollo basad en plataformas\Proyecto-DBP GRUPO 4\SuperAvance\ProyectoDBP\obj\Debug\net8.0\ProyectoDBP.pdb
 C:\Users\svald\OneDrive - Universidad San Ignacio de Loyola\Usil tareas 2025-02\Desarrollo basad en plataformas\Proyecto-DBP GRUPO 4\SuperAvance\ProyectoDBP\obj\Debug\net8.0\ProyectoDBP.genruntimeconfig.cache
 C:\Users\svald\OneDrive - Universidad San Ignacio de Loyola\Usil tareas 2025-02\Desarrollo basad en plataformas\Proyecto-DBP GRUPO 4\SuperAvance\ProyectoDBP\obj\Debug\net8.0\ref\ProyectoDBP.dll
+C:\Users\simon\Desktop\USIL\CICLO 7\DBP\ProyectoDBP\obj\Debug\net8.0\ProyectoDBP.sourcelink.json

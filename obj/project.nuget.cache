@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DbqK3nsFmjA=",
+  "dgSpecHash": "5wSgWaix4Ko=",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP1\\ProyectoDBP\\ProyectoDBP.csproj",
+  "projectFilePath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\ProyectoDBP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simon\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
