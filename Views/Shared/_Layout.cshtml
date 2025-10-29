@@ -35,6 +35,11 @@
                 <a asp-controller="ServiciosStaff" asp-action="Servicios" class="topbar__link">Servicios</a>
                 <a asp-controller="ServiciosStaff" asp-action="StaffMedico" class="topbar__link">Staff médico</a>
 
+                @if (userRol == 2)
+                {
+                    <a asp-controller="DoctorDisponibilidades" asp-action="MisHorarios" class="topbar__link">Mis horarios</a>
+                }
+
                 <!-- Menú Citas (visible para todos los roles logueados) -->
                 <div class="dropdown">
                     <a class="topbar__link dropdown-toggle" href="#" id="citasDropdown" role="button"
