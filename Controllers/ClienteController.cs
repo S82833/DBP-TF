@@ -13,12 +13,12 @@ namespace ProyectoDBP.Controllers
         // GET /Cliente/agendarCita?especialidad=Endodoncia&idMedico=5
         public IActionResult agendarCita(string? especialidad, int? idMedico)
         {
-            // Requiere sesión
+            // Requiere sesiÃ³n
             var userName = HttpContext.Session.GetString("UserName");
             if (string.IsNullOrEmpty(userName))
             {
                 var returnUrl = Url.Action("agendarCita", "Cliente", new { especialidad, idMedico });
-                TempData["ErrorMessage"] = "Debes iniciar sesión para agendar una cita.";
+                TempData["ErrorMessage"] = "Debes iniciar sesiÃ³n para agendar una cita.";
                 return RedirectToAction("Login", "Account", new { returnUrl });
             }
 
@@ -35,7 +35,7 @@ namespace ProyectoDBP.Controllers
                 selectedValue: especialidad
             );
 
-            // 2) MÉDICOS filtrados por servicio si viene 'especialidad' (via tabla puente ServiciosStaff)
+            // 2) MÃ‰DICOS filtrados por servicio si viene 'especialidad' (via tabla puente ServiciosStaff)
             var medicosQuery = _context.StaffMedico.AsQueryable();
 
             if (!string.IsNullOrEmpty(especialidad))
@@ -54,7 +54,38 @@ namespace ProyectoDBP.Controllers
                 }
                 else
                 {
-                    // Si no encuentra el servicio, devolvemos lista vacía para no confundir
+            // 3) Horarios disponibles para el mdico seleccionado
+            SelectList? horariosSelect = null;
+            string? mensajeHorario = null;
+
+            if (idMedico.HasValue)
+            {
+                var horarios = _context.DoctorDisponibilidades
+                    .AsNoTracking()
+                    .Where(h => h.IdStaffMedico == idMedico.Value)
+                    .OrderBy(h => h.DiaSemana)
+                    .ThenBy(h => h.HoraInicio)
+                    .Select(h => new
+                    {
+                        h.IdDoctorDisponibilidad,
+                        Descripcion = $"{h.DiaSemana}: {h.HoraInicio} - {h.HoraFin}"
+                    })
+                    .ToList();
+
+                if (horarios.Any())
+                {
+                    horariosSelect = new SelectList(horarios, "IdDoctorDisponibilidad", "Descripcion");
+                }
+                else
+                {
+                    mensajeHorario = "El doctor seleccionado no est atendiendo actualmente.";
+                }
+            }
+
+            ViewBag.Horarios = horariosSelect;
+            ViewBag.MensajeHorario = mensajeHorario;
+
+                    // Si no encuentra el servicio, devolvemos lista vacÃ­a para no confundir
                     medicosQuery = _context.StaffMedico.Where(m => false);
                 }
             }
