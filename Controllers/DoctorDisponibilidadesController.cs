@@ -83,6 +83,19 @@ namespace ProyectoDBP.Controllers
             var acceso = ValidarAcceso();
             if (acceso != null) return acceso;
 
+            var medicoIdSesion = await GetMedicoIdFromSessionAsync();
+            if (medicoIdSesion == null)
+            {
+                TempData["Error"] = "No se encontró tu perfil de médico asociado.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (medicoIdSesion != idStaffMedico)
+            {
+                TempData["Error"] = "No tienes permiso para modificar los horarios de otro médico.";
+                return RedirectToAction(nameof(Gestionar), new { idStaffMedico = medicoIdSesion.Value });
+            }
+
             var viewModel = await ConstruirGestionViewModel(idStaffMedico);
             if (viewModel == null) return NotFound();
 
@@ -93,9 +106,19 @@ namespace ProyectoDBP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(DoctorDisponibilidadFormModel form)
         {
+            // 1) Debe estar logueado como médico
             var acceso = ValidarAcceso();
             if (acceso != null) return acceso;
 
+            // 2) Validar que el médico logueado solo edite su propio perfil
+            var medicoIdSesion = await GetMedicoIdFromSessionAsync();
+            if (medicoIdSesion == null || medicoIdSesion != form.IdStaffMedico)
+            {
+                TempData["Error"] = "No puedes registrar disponibilidad para otro médico.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            // 3) Validaciones de modelo
             if (!ModelState.IsValid)
             {
                 var vmInvalido = await ConstruirGestionViewModel(form.IdStaffMedico, form);
@@ -103,7 +126,12 @@ namespace ProyectoDBP.Controllers
                 return View("Gestionar", vmInvalido);
             }
 
-            if (!await _context.StaffMedico.AnyAsync(m => m.IdStaffMedico == form.IdStaffMedico))
+            // 4) Verificar existencia del médico
+            var existeMedico = await _context.StaffMedico
+                .AsNoTracking()
+                .AnyAsync(m => m.IdStaffMedico == form.IdStaffMedico);
+
+            if (!existeMedico)
             {
                 ModelState.AddModelError(string.Empty, "El médico seleccionado no existe.");
                 var vmNotFound = await ConstruirGestionViewModel(form.IdStaffMedico, form);
@@ -111,33 +139,20 @@ namespace ProyectoDBP.Controllers
                 return View("Gestionar", vmNotFound);
             }
 
-            if (!TimeSpan.TryParse(form.HoraInicio, out var horaInicio) ||
-                !TimeSpan.TryParse(form.HoraFin, out var horaFin))
+            // 5) Validar horas (formato, orden e intervalos de 30’)
+            if (!TimeSpan.TryParse(form.HoraInicio, out var hi) ||
+                !TimeSpan.TryParse(form.HoraFin, out var hf) ||
+                hi >= hf ||
+                (hf - hi).TotalMinutes % 30 != 0 ||
+                hi.Minutes % 30 != 0 || hf.Minutes % 30 != 0)
             {
-                ModelState.AddModelError(string.Empty, "Selecciona horas válidas.");
+                ModelState.AddModelError(string.Empty, "Rango de horas inválido (intervalos de 30 min, inicio < fin).");
                 var vmHoras = await ConstruirGestionViewModel(form.IdStaffMedico, form);
                 if (vmHoras == null) return NotFound();
                 return View("Gestionar", vmHoras);
             }
 
-            if (horaInicio >= horaFin)
-            {
-                ModelState.AddModelError(string.Empty, "La hora de inicio debe ser menor a la hora de fin.");
-                var vmOrden = await ConstruirGestionViewModel(form.IdStaffMedico, form);
-                if (vmOrden == null) return NotFound();
-                return View("Gestionar", vmOrden);
-            }
-
-            if ((horaFin - horaInicio).TotalMinutes % 30 != 0 ||
-                horaInicio.Minutes % 30 != 0 ||
-                horaFin.Minutes % 30 != 0)
-            {
-                ModelState.AddModelError(string.Empty, "Los horarios deben estar en intervalos de 30 minutos.");
-                var vmIntervalo = await ConstruirGestionViewModel(form.IdStaffMedico, form);
-                if (vmIntervalo == null) return NotFound();
-                return View("Gestionar", vmIntervalo);
-            }
-
+            // 6) Validar traslape (primero a memoria -> luego Any() con cálculo en C#)
             var disponibilidades = await _context.DoctorDisponibilidades
                 .Where(d => d.IdStaffMedico == form.IdStaffMedico && d.DiaSemana == form.DiaSemana)
                 .AsNoTracking()
@@ -145,9 +160,9 @@ namespace ProyectoDBP.Controllers
 
             var existeTraslape = disponibilidades.Any(d =>
             {
-                var inicioExistente = TimeSpan.Parse(d.HoraInicio);
-                var finExistente = TimeSpan.Parse(d.HoraFin);
-                return horaInicio < finExistente && inicioExistente < horaFin;
+                var ie = TimeSpan.Parse(d.HoraInicio);
+                var fe = TimeSpan.Parse(d.HoraFin);
+                return hi < fe && ie < hf; // traslape si se intersectan abiertos
             });
 
             if (existeTraslape)
@@ -158,12 +173,13 @@ namespace ProyectoDBP.Controllers
                 return View("Gestionar", vmTraslape);
             }
 
+            // 7) Guardar
             var nuevaDisponibilidad = new DoctorDisponibilidad
             {
                 IdStaffMedico = form.IdStaffMedico,
                 DiaSemana = form.DiaSemana,
-                HoraInicio = horaInicio.ToString(@"hh\:mm"),
-                HoraFin = horaFin.ToString(@"hh\:mm")
+                HoraInicio = hi.ToString(@"hh\:mm"),
+                HoraFin = hf.ToString(@"hh\:mm")
             };
 
             _context.DoctorDisponibilidades.Add(nuevaDisponibilidad);
@@ -172,6 +188,8 @@ namespace ProyectoDBP.Controllers
             TempData["Success"] = "Disponibilidad registrada correctamente.";
             return RedirectToAction(nameof(Gestionar), new { idStaffMedico = form.IdStaffMedico });
         }
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -183,6 +201,13 @@ namespace ProyectoDBP.Controllers
             var disponibilidad = await _context.DoctorDisponibilidades.FindAsync(id);
             if (disponibilidad == null) return NotFound();
 
+            var medicoIdSesion = await GetMedicoIdFromSessionAsync();
+            if (medicoIdSesion == null || medicoIdSesion != disponibilidad.IdStaffMedico)
+            {
+                TempData["Error"] = "No puedes eliminar la disponibilidad de otro médico.";
+                return RedirectToAction(nameof(Index));
+            }
+
             var idStaff = disponibilidad.IdStaffMedico;
             _context.DoctorDisponibilidades.Remove(disponibilidad);
             await _context.SaveChangesAsync();
@@ -190,6 +215,8 @@ namespace ProyectoDBP.Controllers
             TempData["Success"] = "Disponibilidad eliminada.";
             return RedirectToAction(nameof(Gestionar), new { idStaffMedico = idStaff });
         }
+
+
 
         private IActionResult? ValidarAcceso()
         {
@@ -286,5 +313,19 @@ namespace ProyectoDBP.Controllers
         {
             return TimeSpan.TryParse(hora, out var resultado) ? resultado : TimeSpan.MaxValue;
         }
+        private async Task<int?> GetMedicoIdFromSessionAsync()
+        {
+            var nombreSesion = HttpContext.Session.GetString("UserName");
+            if (string.IsNullOrWhiteSpace(nombreSesion)) return null;
+
+            var medico = await _context.StaffMedico
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m =>
+                    (m.Nombre + " " + m.Apellido).ToLower() ==
+                    nombreSesion.ToLower());
+
+            return medico?.IdStaffMedico;
+        }
+
     }
 }

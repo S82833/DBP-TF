@@ -18,6 +18,7 @@ namespace ProyectoDBP.Datos
         {
             base.OnModelCreating(modelBuilder);
 
+            // ---- ServicioStaff: relaciones y unicidad servicio-médico ----
             modelBuilder.Entity<ServicioStaff>()
                 .HasKey(ss => ss.IdServiciosStaff);
 
@@ -33,11 +34,19 @@ namespace ProyectoDBP.Datos
                 .HasForeignKey(ss => ss.IdStaffMedico)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Evitar duplicados (mismo servicio–médico)
             modelBuilder.Entity<ServicioStaff>()
                 .HasIndex(ss => new { ss.IdServicio, ss.IdStaffMedico })
                 .IsUnique();
-        }
 
+            // ---- Citas: tipo de columna e índice único por médico+fecha/hora ----
+            modelBuilder.Entity<Cita>()
+                .Property(c => c.Fecha)
+                .HasColumnType("datetime2");
+
+            modelBuilder.Entity<Cita>()
+                .HasIndex(c => new { c.IdStaffMedico, c.Fecha })
+                .IsUnique()
+                .HasDatabaseName("UX_Citas_Medico_Fecha");
+        }
     }
 }

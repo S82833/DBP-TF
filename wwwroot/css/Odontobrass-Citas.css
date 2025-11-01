@@ -240,3 +240,83 @@ a {
         padding: 20px;
     }
 }
+
+td.acciones {
+    white-space: nowrap;
+}
+
+td.acciones .btn {
+        vertical-align: middle;
+
+}
+
+/* Forzar colores y tamaños “normales” de Bootstrap en la tabla */
+.table .btn {
+    border-radius: .5rem; /* suave, no pastilla enorme */
+    padding: .375rem .75rem; /* tamaño bootstrap */
+    font-weight: 600;
+}
+
+.table .btn-primary,
+.table .btn-primary:focus,
+.table .btn-primary:hover {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+.table .btn-danger,
+.table .btn-danger:focus,
+.table .btn-danger:hover {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+/* Por si algún CSS tuyo hace a los botones “display:block” o les da ancho fijo */
+.table .btn {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+/* --- Cronograma de citas: forzar botones compactos y cuadrados --- */
+.cronograma .btn {
+    display: inline-block !important;
+    width: auto !important;
+    padding: .375rem .75rem !important; /* tamaño Bootstrap “normal” */
+    font-size: .95rem !important;
+    line-height: 1.2 !important;
+    border-radius: 6px !important; /* cuadrados con esquinas suaves */
+    box-shadow: none !important;
+}
+
+/* Colores fijos (sin cambiar en hover/focus) */
+.cronograma .btn-primary,
+.cronograma .btn-primary:hover,
+.cronograma .btn-primary:focus {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+.cronograma .btn-danger,
+.cronograma .btn-danger:hover,
+.cronograma .btn-danger:focus {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+/* Evitar que otros CSS impongan “pill” o tamaños raros */
+.cronograma .btn,
+.table .btn {
+    border-width: 1px !important;
+}
+
+/* Celdas de acciones sin salto y centradas */
+td.acciones {
+    white-space: nowrap;
+}
+
+
+

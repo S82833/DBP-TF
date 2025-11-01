@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoDBP.Datos;
+using ProyectoDBP.Models;
 
 namespace ProyectoDBP.Controllers
 {
@@ -95,33 +96,322 @@ namespace ProyectoDBP.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult ObtenerHorarios(int idMedico, DateTime fecha)
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AgendarCita(string Especialidad, int Medico, DateTime Fecha, string Hora)
         {
-            // Determinar el nombre del día
+            // --- Sesión y fallback por correo, para evitar que te redirija a Login al confirmar ---
+            var userId = HttpContext.Session.GetInt32("UserId");
+            var userName = HttpContext.Session.GetString("UserName");
+            var userEmail = HttpContext.Session.GetString("UserEmail");
+
+            if (userId == null && !string.IsNullOrEmpty(userEmail))
+            {
+                userId = await _context.Usuarios
+                    .Where(u => u.Correo == userEmail)
+                    .Select(u => (int?)u.IdUsuario)
+                    .FirstOrDefaultAsync();
+
+                if (userId != null)
+                    HttpContext.Session.SetInt32("UserId", userId.Value);
+            }
+
+            if (userId == null || string.IsNullOrEmpty(userName))
+            {
+                TempData["ErrorMessage"] = "Debes iniciar sesión para agendar.";
+                return RedirectToAction("Login", "Account",
+                    new { returnUrl = Url.Action("agendarCita", "Cliente") });
+            }
+
+            // --- Validaciones de entrada ---
+            if (string.IsNullOrWhiteSpace(Especialidad) || Medico <= 0 || Fecha == default || string.IsNullOrWhiteSpace(Hora))
+            {
+                TempData["ErrorMessage"] = "Completa Especialidad, Médico, Fecha y Hora.";
+                return RedirectToAction("agendarCita", new { especialidad = Especialidad, idMedico = Medico });
+            }
+
+            var servicioId = await _context.Servicios
+                .Where(s => s.Nombre == Especialidad)
+                .Select(s => s.IdServicio)
+                .FirstOrDefaultAsync();
+
+            if (servicioId == 0)
+            {
+                TempData["ErrorMessage"] = "La especialidad seleccionada no existe.";
+                return RedirectToAction("agendarCita");
+            }
+
+            // --- Fecha/hora seleccionada ---
+            var ts = TimeSpan.Parse(Hora);
+            var fechaHora = Fecha.Date.Add(ts);
+
+            // --- Verificación rápida en memoria ---
+            var yaTomada = await _context.Citas
+                .AnyAsync(c => c.IdStaffMedico == Medico && c.Fecha == fechaHora);
+
+            if (yaTomada)
+            {
+                TempData["ErrorMessage"] = "Esa hora ya fue tomada por otro paciente. Elige otra.";
+                return RedirectToAction("agendarCita", new { especialidad = Especialidad, idMedico = Medico });
+            }
+
+            // --- Inserción con blindaje. El índice único en BD evita carreras. ---
+            var cita = new Cita
+            {
+                IdUsuario = userId.Value,
+                IdServicio = servicioId,
+                IdStaffMedico = Medico,
+                Fecha = fechaHora
+            };
+
+            _context.Citas.Add(cita);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                // Si otro usuario ganó la carrera, el índice único rechaza la inserción
+                TempData["ErrorMessage"] = "No se pudo reservar: esa hora ya fue tomada. Intenta con otra hora.";
+                return RedirectToAction("agendarCita", new { especialidad = Especialidad, idMedico = Medico });
+            }
+
+            TempData["Success"] = $"Cita reservada para {fechaHora:dd/MM/yyyy HH:mm}.";
+            return RedirectToAction("cronogramaCitas", "Cliente");
+        }
+
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> ObtenerHorarios(int idMedico, DateTime fecha)
+        {
+            // Día de la semana en ES (Lunes, Martes, ...)
             var nombreDia = fecha.ToString("dddd", new System.Globalization.CultureInfo("es-ES"));
-            nombreDia = char.ToUpper(nombreDia[0]) + nombreDia.Substring(1); // capitalizar (Lunes, Martes, etc.)
+            nombreDia = char.ToUpper(nombreDia[0]) + nombreDia.Substring(1);
 
-            var disponibilidad = _context.DoctorDisponibilidades
+            // Todas las disponibilidades del doctor para ese día
+            var bloques = await _context.DoctorDisponibilidades
                 .AsNoTracking()
-                .FirstOrDefault(d => d.IdStaffMedico == idMedico && d.DiaSemana == nombreDia);
+                .Where(d => d.IdStaffMedico == idMedico && d.DiaSemana == nombreDia)
+                .Select(d => new { d.HoraInicio, d.HoraFin })
+                .ToListAsync();
 
-            if (disponibilidad == null)
+            if (!bloques.Any())
             {
                 return Json(new { success = false, mensaje = $"El doctor no atiende los días {nombreDia}." });
             }
 
-            // Generar intervalos de 30 minutos
-            var horaInicio = TimeSpan.Parse(disponibilidad.HoraInicio);
-            var horaFin = TimeSpan.Parse(disponibilidad.HoraFin);
-            var horarios = new List<string>();
-
-            for (var h = horaInicio; h < horaFin; h = h.Add(TimeSpan.FromMinutes(30)))
+            // Generar slots de 30 min fusionando rangos
+            var slots = new HashSet<string>(); // evita duplicados
+            foreach (var b in bloques)
             {
-                horarios.Add(h.ToString(@"hh\:mm"));
+                var hi = TimeSpan.Parse(b.HoraInicio);
+                var hf = TimeSpan.Parse(b.HoraFin);
+                for (var t = hi; t < hf; t = t.Add(TimeSpan.FromMinutes(30)))
+                    slots.Add(t.ToString(@"hh\:mm"));
             }
 
-            return Json(new { success = true, horarios });
+            // Quitar horas ya reservadas para ese doctor y fecha
+            var citasEseDia = await _context.Citas
+                .AsNoTracking()
+                .Where(c => c.IdStaffMedico == idMedico && c.Fecha.Date == fecha.Date)
+                .Select(c => c.Fecha.TimeOfDay)
+                .ToListAsync();
+
+            foreach (var taken in citasEseDia)
+                slots.Remove(taken.ToString(@"hh\:mm"));
+
+            var resultado = slots
+                .Select(s => TimeSpan.Parse(s))
+                .OrderBy(s => s)
+                .Select(s => s.ToString(@"hh\:mm"))
+                .ToList();
+
+            if (!resultado.Any())
+                return Json(new { success = false, mensaje = "No quedan horas disponibles para la fecha seleccionada." });
+
+            return Json(new { success = true, horarios = resultado });
+        }
+
+
+        // ===============================
+        // CRONOGRAMA (paciente o médico)
+        // ===============================
+        [HttpGet]
+        public async Task<IActionResult> cronogramaCitas()
+        {
+            var userId = HttpContext.Session.GetInt32("UserId");
+            var rol = HttpContext.Session.GetInt32("UserRol");
+            var userName = HttpContext.Session.GetString("UserName");
+
+            if (userId == null || rol == null)
+                return RedirectToAction("Login", "Account",
+                    new { returnUrl = Url.Action("cronogramaCitas", "Cliente") });
+
+            // Si es médico (rol=2) intento mapear su IdStaffMedico por nombre completo
+            int? doctorId = null;
+            if (rol == 2 && !string.IsNullOrWhiteSpace(userName))
+            {
+                var doc = await _context.StaffMedico.AsNoTracking()
+                    .FirstOrDefaultAsync(m =>
+                        (m.Nombre + " " + m.Apellido).ToLower() == userName.ToLower());
+                if (doc != null) doctorId = doc.IdStaffMedico;
+            }
+
+            // IMPORTANTE: usar las navegaciones reales: Usuario, Servicio, StaffMedico
+            var query = _context.Citas
+                .Include(c => c.Usuario)
+                .Include(c => c.Servicio)
+                .Include(c => c.StaffMedico)
+                .AsNoTracking()
+                .AsQueryable();
+
+            if (rol == 1)                       // paciente
+                query = query.Where(c => c.IdUsuario == userId.Value);
+            else if (rol == 2 && doctorId.HasValue) // médico
+                query = query.Where(c => c.IdStaffMedico == doctorId.Value);
+            else
+                query = query.Where(c => false);     // por si no mapea
+
+            var citas = await query
+                .OrderBy(c => c.Fecha)
+                .Select(c => new
+                {
+                    c.IdCita,
+                    Paciente = c.Usuario.Nombre,
+                    Doctor = c.StaffMedico.Nombre + " " + c.StaffMedico.Apellido,
+                    Servicio = c.Servicio.Nombre,
+                    Fecha = c.Fecha
+                })
+                .ToListAsync();
+
+            ViewBag.EsMedico = (rol == 2);
+            return View("cronogramaCitas", citas); // tu vista puede ser dinámica; si luego quieres fuertemente tipada, armamos un ViewModel.
+        }
+
+
+        // ===============================
+        // CANCELAR CITA (POST)
+        // ===============================
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CancelarCita(int id)
+        {
+            var (ok, rol, userId, doctorId) = await GetPermisoSobreCita(id);
+            if (!ok) return Forbid();
+
+            var cita = await _context.Citas.FindAsync(id);
+            if (cita == null) return NotFound();
+
+            // validación de autorización
+            if (!PuedeOperar(rol, userId, doctorId, cita)) return Forbid();
+
+            _context.Citas.Remove(cita);
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "La cita fue cancelada.";
+            return RedirectToAction(nameof(cronogramaCitas));
+        }
+
+        // ===============================
+        // REPROGRAMAR CITA (GET) — muestra la vista con la cita actual
+        // ===============================
+        [HttpGet]
+        public async Task<IActionResult> ReprogramarCita(int id)
+        {
+            var (ok, rol, userId, doctorId) = await GetPermisoSobreCita(id);
+            if (!ok) return Forbid();
+
+            var cita = await _context.Citas
+                .Include(c => c.Servicio)
+                .Include(c => c.StaffMedico)
+                .Include(c => c.Usuario)
+                .FirstOrDefaultAsync(c => c.IdCita == id);
+
+            if (cita == null) return NotFound();
+            if (!PuedeOperar(rol, userId, doctorId, cita)) return Forbid();
+
+            ViewBag.Info = new
+            {
+                cita.IdCita,
+                IdStaffMedico = cita.IdStaffMedico,
+                Doctor = $"{cita.StaffMedico?.Nombre} {cita.StaffMedico?.Apellido}",
+                Servicio = cita.Servicio?.Nombre,
+                FechaActual = cita.Fecha.ToString("dd/MM/yyyy HH:mm")
+            };
+
+            // La vista usará /Cliente/ObtenerHorarios para cargar horas válidas del doctor en la nueva fecha
+            return View("reprogramarCita");
+        }
+
+
+
+        // ===============================
+        // REPROGRAMAR CITA (POST) 
+        // ===============================
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ReprogramarCita(int id, DateTime NuevaFecha, string NuevaHora)
+        {
+            var (ok, rol, userId, doctorId) = await GetPermisoSobreCita(id);
+            if (!ok) return Forbid();
+
+            var cita = await _context.Citas.FindAsync(id);
+            if (cita == null) return NotFound();
+            if (!PuedeOperar(rol, userId, doctorId, cita)) return Forbid();
+
+            if (NuevaFecha == default || string.IsNullOrWhiteSpace(NuevaHora))
+            {
+                TempData["ErrorMessage"] = "Selecciona nueva fecha y hora.";
+                return RedirectToAction(nameof(ReprogramarCita), new { id });
+            }
+
+            // Validar contra duplicado (misma regla que crear)
+            var ts = TimeSpan.Parse(NuevaHora);
+            var nuevaFechaHora = NuevaFecha.Date.Add(ts);
+
+            var colision = await _context.Citas
+                .AnyAsync(c => c.IdStaffMedico == cita.IdStaffMedico && c.Fecha == nuevaFechaHora && c.IdCita != cita.IdCita);
+            if (colision)
+            {
+                TempData["ErrorMessage"] = "Ese horario ya está ocupado, elige otro.";
+                return RedirectToAction(nameof(ReprogramarCita), new { id });
+            }
+
+            cita.Fecha = nuevaFechaHora;
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "La cita fue reprogramada.";
+            return RedirectToAction(nameof(cronogramaCitas));
+        }
+
+        // ---------- helpers de autorización ----------
+        private async Task<(bool ok, int rol, int? userId, int? doctorId)> GetPermisoSobreCita(int idCita)
+        {
+            var rol = HttpContext.Session.GetInt32("UserRol") ?? 0;
+            var userId = HttpContext.Session.GetInt32("UserId");
+            var userName = HttpContext.Session.GetString("UserName");
+
+            int? doctorId = null;
+            if (rol == 2 && !string.IsNullOrEmpty(userName))
+            {
+                var doc = await _context.StaffMedico
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(m => (m.Nombre + " " + m.Apellido).ToLower() == userName.ToLower());
+                doctorId = doc?.IdStaffMedico;
+            }
+            var logueado = (userId != null && rol > 0);
+            return (logueado, rol, userId, doctorId);
+        }
+
+        private static bool PuedeOperar(int rol, int? userId, int? doctorId, Cita c)
+        {
+            if (rol == 1) return c.IdUsuario == userId;
+            if (rol == 2) return doctorId != null && c.IdStaffMedico == doctorId.Value;
+            return false;
         }
 
 

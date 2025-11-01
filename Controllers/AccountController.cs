@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProyectoDBP.Datos;
 using ProyectoDBP.Models;
 using System;
@@ -16,44 +17,49 @@ namespace ProyectoDBP.Controllers
         // LOGIN
         // ===============================
 
+        // GET: /Account/Login
         [HttpGet]
-        public IActionResult Login(string? returnUrl = null)
+        public IActionResult Login(string? returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
+        // POST: /Account/Login  (SIN ViewModel)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(string Email, string Password, string? returnUrl = null)
+        public async Task<IActionResult> Login([FromForm] string Email, [FromForm] string Password, string? returnUrl)
         {
-            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
-                ViewBag.Error = "Debes ingresar ambos campos.";
-                ViewBag.ReturnUrl = returnUrl;
-                return View();
-            }
-            var user = _context.Usuarios
-                .FirstOrDefault(u => u.Correo == Email && u.Contraseña == Password);
-
-            if (user == null)
-            {
-                ViewBag.Error = "Correo o contraseña incorrectos.";
+                ModelState.AddModelError(string.Empty, "Ingrese correo y contraseña.");
                 ViewBag.ReturnUrl = returnUrl;
                 return View();
             }
 
-            // Sesión
-            HttpContext.Session.SetString("UserEmail", user.Correo);
-            HttpContext.Session.SetString("UserName", user.Nombre);
-            HttpContext.Session.SetInt32("UserRol", user.Rol);
+            // Validación simple (como acordamos, sin hash)
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Correo == Email && u.Contraseña == Password);
 
-            // Respeta returnUrl si vino de “Reservar cita”
+            if (usuario == null)
+            {
+                ModelState.AddModelError(string.Empty, "Credenciales inválidas.");
+                ViewBag.ReturnUrl = returnUrl;
+                return View();
+            }
+
+            // GUARDAR SESIÓN COMPLETA
+            HttpContext.Session.SetInt32("UserId", usuario.IdUsuario);
+            HttpContext.Session.SetString("UserName", usuario.Nombre);   // o $"{usuario.Nombre} {usuario.Apellido}"
+            HttpContext.Session.SetString("UserEmail", usuario.Correo);
+            HttpContext.Session.SetInt32("UserRol", usuario.Rol);
+
             if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
 
             return RedirectToAction("Index", "Inicio");
         }
+
 
         // ===============================
         // REGISTRO
@@ -115,11 +121,15 @@ namespace ProyectoDBP.Controllers
         // LOGOUT
         // ===============================
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
+
+
     }
 }
 

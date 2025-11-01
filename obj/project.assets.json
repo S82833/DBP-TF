@@ -4016,23 +4016,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\simon\\.nuget\\packages\\": {},
+    "C:\\Users\\svald\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\ProyectoDBP.csproj",
+      "projectUniqueName": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\ProyectoDBP.csproj",
       "projectName": "ProyectoDBP",
-      "projectPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\ProyectoDBP.csproj",
-      "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\obj\\",
+      "projectPath": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\ProyectoDBP.csproj",
+      "packagesPath": "C:\\Users\\svald\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\svald\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4041,6 +4041,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4099,7 +4100,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

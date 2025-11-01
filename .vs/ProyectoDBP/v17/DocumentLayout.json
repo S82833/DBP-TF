@@ -1,74 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\",
+  "WorkspaceRootPath": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\cliente\\agendarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\cliente\\agendarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\doctordisponibilidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\doctordisponibilidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\views\\cliente\\cronogramacitas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\cliente\\cronogramacitas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\wwwroot\\css\\odontobrass-citas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:wwwroot\\css\\odontobrass-citas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\cliente\\reprogramarcita.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\serviciosstaff\\staffmedico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\serviciosstaff\\staffmedico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\models\\serviciostaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:models\\serviciostaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:models\\servicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\models\\staffmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:models\\staffmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\views\\inicio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:views\\inicio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\wwwroot\\css\\odontobrass-inicio.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:wwwroot\\css\\odontobrass-inicio.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\simon\\desktop\\usil\\ciclo 7\\dbp\\proyectodbp\\migrations\\20251029005128_migration03.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:migrations\\20251029005128_migration03.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|c:\\users\\svald\\onedrive - universidad san ignacio de loyola\\usil tareas 2025-02\\desarrollo basad en plataformas\\proyecto-dbp grupo 4\\avance jueves 30 de octubre\\dbp-tf-main\\datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE57647-AC18-4377-B3CB-2FF7C35AB033}|ProyectoDBP.csproj|solutionrelative:datos\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -103,210 +67,99 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DoctorDisponibilidadesController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\DoctorDisponibilidadesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DoctorDisponibilidadesController.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\DoctorDisponibilidadesController.cs",
-              "RelativeToolTip": "Controllers\\DoctorDisponibilidadesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T02:00:16.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-29T00:23:41.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-29T00:23:38.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "reprogramarCita.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\reprogramarCita.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cliente\\reprogramarCita.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\reprogramarCita.cshtml",
-              "RelativeToolTip": "Views\\Cliente\\reprogramarCita.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-23T03:01:23.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T03:01:50.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "agendarCita.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\agendarCita.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cliente\\agendarCita.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Cliente\\agendarCita.cshtml",
-              "RelativeToolTip": "Views\\Cliente\\agendarCita.cshtml",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAkwHUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T03:37:44.272Z",
-              "EditorCaption": ""
+              "Title": "Odontobrass-Citas.css",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\wwwroot\\css\\Odontobrass-Citas.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Odontobrass-Citas.css",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\wwwroot\\css\\Odontobrass-Citas.css",
+              "RelativeToolTip": "wwwroot\\css\\Odontobrass-Citas.css",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAQwD8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-31T22:55:12.385Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T00:49:23.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20251029005128_Migration03.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Migrations\\20251029005128_Migration03.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251029005128_Migration03.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Migrations\\20251029005128_Migration03.cs",
-              "RelativeToolTip": "Migrations\\20251029005128_Migration03.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T00:51:28.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T00:49:35.347Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "StaffMedico.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\ServiciosStaff\\StaffMedico.cshtml",
-              "RelativeDocumentMoniker": "Views\\ServiciosStaff\\StaffMedico.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\ServiciosStaff\\StaffMedico.cshtml",
-              "RelativeToolTip": "Views\\ServiciosStaff\\StaffMedico.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA+AAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T06:06:04.788Z"
+              "WhenOpened": "2025-10-31T22:13:00.412Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "odontobrass-inicio.css",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\wwwroot\\css\\odontobrass-inicio.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\odontobrass-inicio.css",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\wwwroot\\css\\odontobrass-inicio.css",
-              "RelativeToolTip": "wwwroot\\css\\odontobrass-inicio.css",
-              "ViewState": "AgIAAJ4DAAAAAAAAAAAswMkDAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-22T06:00:34.557Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Inicio\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Inicio\\Index.cshtml",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Views\\Inicio\\Index.cshtml",
-              "RelativeToolTip": "Views\\Inicio\\Index.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAiwFkAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "reprogramarCita.cshtml",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Views\\Cliente\\reprogramarCita.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cliente\\reprogramarCita.cshtml",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Views\\Cliente\\reprogramarCita.cshtml",
+              "RelativeToolTip": "Views\\Cliente\\reprogramarCita.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T05:59:02.264Z"
+              "WhenOpened": "2025-10-31T21:58:01.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "InicioController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\InicioController.cs",
-              "RelativeDocumentMoniker": "Controllers\\InicioController.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Controllers\\InicioController.cs",
-              "RelativeToolTip": "Controllers\\InicioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T05:56:52.695Z"
+              "DocumentIndex": 1,
+              "Title": "cronogramaCitas.cshtml",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Views\\Cliente\\cronogramaCitas.cshtml",
+              "RelativeDocumentMoniker": "Views\\Cliente\\cronogramaCitas.cshtml",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Views\\Cliente\\cronogramaCitas.cshtml",
+              "RelativeToolTip": "Views\\Cliente\\cronogramaCitas.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:57:32.032Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Datos\\ApplicationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Datos\\ApplicationDBContext.cs",
               "RelativeDocumentMoniker": "Datos\\ApplicationDBContext.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Datos\\ApplicationDBContext.cs",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Datos\\ApplicationDBContext.cs",
               "RelativeToolTip": "Datos\\ApplicationDBContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAiwBcAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T05:36:01.716Z"
+              "WhenOpened": "2025-10-31T20:41:23.455Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "StaffMedico.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\StaffMedico.cs",
-              "RelativeDocumentMoniker": "Models\\StaffMedico.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\StaffMedico.cs",
-              "RelativeToolTip": "Models\\StaffMedico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T05:34:20.28Z"
+              "WhenOpened": "2025-10-31T20:10:49.083Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Servicio.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\Servicio.cs",
-              "RelativeDocumentMoniker": "Models\\Servicio.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\Servicio.cs",
-              "RelativeToolTip": "Models\\Servicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABMAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwFgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T05:34:02.147Z"
+              "WhenOpened": "2025-10-31T20:09:49.911Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ServicioStaff.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\ServicioStaff.cs",
-              "RelativeDocumentMoniker": "Models\\ServicioStaff.cs",
-              "ToolTip": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\Models\\ServicioStaff.cs",
-              "RelativeToolTip": "Models\\ServicioStaff.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\svald\\OneDrive - Universidad San Ignacio de Loyola\\Usil tareas 2025-02\\Desarrollo basad en plataformas\\Proyecto-DBP GRUPO 4\\Avance jueves 30 de octubre\\DBP-TF-main\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAIwGABAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T05:33:28.732Z"
+              "WhenOpened": "2025-10-23T03:01:50.174Z"
             }
           ]
         }

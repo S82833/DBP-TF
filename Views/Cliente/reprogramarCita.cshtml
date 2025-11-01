@@ -1,31 +1,62 @@
-﻿<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <title>Resumen de la Cita</title>
-    <link rel="stylesheet" href="~/css/Odontobrass-Citas.css">
-</head>
-<body>
-    <h1>Resumen de la Cita</h1>
+﻿@{
+    ViewData["Title"] = "Reprogramar cita";
+    dynamic info = ViewBag.Info;
+    int idCita = info.IdCita;
+    int idMedico = info.IdStaffMedico;
+}
 
-    <p><strong>Especialidad:</strong> (se mostrará aquí)</p>
-    <p><strong>Médico:</strong> (se mostrará aquí)</p>
-    <br>
-    <br>
+<div class="container section">
+    <h2>@ViewData["Title"]</h2>
 
-    <label for="fecha">Fecha</label>
-    <input type="date" id="fecha" name="fecha" required>
-    <br>
-    <br>
-
-    <label for="hora">Hora</label>
-    <input type="time" id="hora" name="hora" required>
-    <br>
-    <br>
-
-    <div class="acciones">
-        <button type="submit" formaction="resumenCita.cshtml">Confirmar</button>
-        <button type="submit" formaction="CancelarCita.html">Cancelar</button>
+    <div class="card p-3 mb-3">
+        <p><strong>Doctor:</strong> @info.Doctor</p>
+        <p><strong>Servicio:</strong> @info.Servicio</p>
+        <p><strong>Fecha actual:</strong> @info.FechaActual</p>
     </div>
-</body>
-</html>
+
+    <form asp-controller="Cliente" asp-action="ReprogramarCita" method="post" class="form">
+        <input type="hidden" name="id" value="@idCita" />
+        <div class="form-group mb-2">
+            <label>Nueva fecha</label>
+            <input type="date" class="form-control" id="NuevaFecha" name="NuevaFecha" required />
+        </div>
+        <div class="form-group mb-3" id="grpHorario" style="display:none">
+            <label>Nueva hora</label>
+            <select class="form-control" id="NuevaHora" name="NuevaHora" required>
+                <option value="">-- Seleccione --</option>
+            </select>
+        </div>
+        <button class="btn btn-primary">Guardar cambios</button>
+        <a class="btn btn-secondary" asp-controller="Cliente" asp-action="cronogramaCitas">Cancelar</a>
+        @Html.AntiForgeryToken()
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        const fecha = document.getElementById("NuevaFecha");
+        const grp   = document.getElementById("grpHorario");
+        const sel   = document.getElementById("NuevaHora");
+        const idMed = @idMedico;
+
+        fecha.addEventListener("change", async () => {
+          sel.innerHTML = '<option value="">-- Seleccione --</option>';
+          grp.style.display = "none";
+          if (!fecha.value) return;
+
+          const r = await fetch(`/Cliente/ObtenerHorarios?idMedico=${idMed}&fecha=${fecha.value}`);
+          const data = await r.json();
+
+          if (data.success) {
+            data.horarios.forEach(h => {
+              const opt = document.createElement("option");
+              opt.value = h; opt.textContent = h;
+              sel.appendChild(opt);
+            });
+            grp.style.display = "block";
+          } else {
+            alert(data.mensaje || "No hay horarios disponibles.");
+          }
+        });
+    </script>
+}

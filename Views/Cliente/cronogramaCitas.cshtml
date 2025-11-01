@@ -1,65 +1,64 @@
-﻿<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronograma de Citas Médicas</title>
-    <link rel="stylesheet" href="~/css/Odontobrass-Citas.css">
-</head>
-<body>
-    <div class="contenedor-citas">
-        <h2>Historial de Citas Médicas</h2>
+﻿@{
+    ViewData["Title"] = "Cronograma de citas";
+    bool esMedico = ViewBag.EsMedico == true;
+    var citas = (IEnumerable<dynamic>)Model;
+}
 
-        <table class="tabla-citas">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Médico</th>
-                    <th>Especialidad</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
+<link rel="stylesheet" href="~/css/odontobrass-.css" asp-append-version="true" />
 
+<div class="container section cronograma">
+    <h2>@ViewData["Title"]</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-warning">@TempData["ErrorMessage"]</div>
+    }
+
+    <table class="table tabla-citas">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Servicio</th>
+                <th>Paciente</th>
+                <th>Doctor</th>
+                <th class="text-center" style="width:220px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in citas)
+            {
                 <tr>
-                    <td>05/10/2025</td>
-                    <td>10:00 AM</td>
-                    <td>Dr. Juan Pérez</td>
-                    <td>Cardiología</td>
-                    <td>Programada</td>
-                    <td>
-                        <a href="reprogramarCita.cshtml" class="btn-reprogramar">Reprogramar</a>
-                        <a href="cancelarCita.cshtml" class="btn-cancelar">Cancelar</a>
+                    <td>@(((DateTime)c.Fecha).ToString("dd/MM/yyyy HH:mm"))</td>
+                    <td>@c.Servicio</td>
+                    <td>@c.Paciente</td>
+                    <td>@c.Doctor</td>
+                    <td class="acciones text-center">
+                        <a asp-controller="Cliente"
+                           asp-action="ReprogramarCita"
+                           asp-route-id="@c.IdCita"
+                           class="btn btn-primary btn-sm me-2">
+                            Reprogramar cita
+                        </a>
+
+                        <form asp-controller="Cliente"
+                              asp-action="CancelarCita"
+                              asp-route-id="@c.IdCita"
+                              method="post"
+                              class="d-inline m-0">
+                            @Html.AntiForgeryToken()
+                            <button type="submit"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('¿Cancelar esta cita?');">
+                                Cancelar cita
+                            </button>
+                        </form>
                     </td>
                 </tr>
-                <!-- Otra cita -->
-                <tr>
-                    <td>12/10/2025</td>
-                    <td>02:30 PM</td>
-                    <td>Dra. María López</td>
-                    <td>Dermatología</td>
-                    <td>Programada</td>
-                    <td>
-                        <a href="reprogramarCita.cshtml" class="btn-reprogramar">Reprogramar</a>
-                        <a href="cancelarCita.cshtml" class="btn-cancelar">Cancelar</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20/09/2025</td>
-                    <td>09:00 AM</td>
-                    <td>Dr. Carlos Ramírez</td>
-                    <td>Oftalmología</td>
-                    <td>Realizada</td>
-                    <td>
-                        <button class="btn-disabled" disabled>Reprogramar</button>
-                        <button class="btn-disabled" disabled>Cancelar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+            }
+        </tbody>
+    </table>
+</div>

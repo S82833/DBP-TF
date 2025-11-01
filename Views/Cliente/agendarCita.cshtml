@@ -4,70 +4,67 @@
 }
 <link rel="stylesheet" href="~/css/Odontobrass-Citas.css" asp-append-version="true" />
 
-<div class="container section">
-    <div class="form-card">
+<form asp-action="AgendarCita" method="post" id="frmAgendar">
+    @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            <label>Especialidad</label>
-            @Html.DropDownList(
-            "Especialidad",                          // name del campo
-                        (SelectList)ViewBag.Especialidades,      // datos + seleccionado
-                        "-- Seleccione --",
-                        new { @class = "form-control", id = "Especialidad" }
-                        )
-        </div>
+    <div class="container section">
+        <div class="form-card">
 
-        <div class="form-group">
-            <label>Médico</label>
-            @Html.DropDownList(
-                        "Medico",
-                        (SelectList)ViewBag.Medicos,
-                        "-- Seleccione --",
-                        new { @class = "form-control", id = "Medico" }
-                        )
-        </div>
-
-        <div class="form-group">
-            <label>Fecha</label>
-            <input type="date" name="Fecha" id="Fecha" class="form-control" />
-        </div>
-
-        @if (ViewBag.Horarios != null)
-        {
             <div class="form-group">
-                <label>Horario disponible</label>
+                <label>Especialidad</label>
                 @Html.DropDownList(
-                "HorarioSeleccionado",
-                        (SelectList)ViewBag.Horarios,
-                        "-- Seleccione --",
-                        new { @class = "form-control", id = "Horario" }
-                        )
-        </div>
-                }
-        else if (!string.IsNullOrEmpty(mensajeHorario))
-        {
-            <div class="alert alert-warning">@mensajeHorario</div>
-        }
+                "Especialidad",
+                                (SelectList)ViewBag.Especialidades,
+                                "-- Seleccione --",
+                                new { @class = "form-control", id = "Especialidad" }
+                                )
+            </div>
 
-        <div class="btn-row">
-            <button class="btn btn-primary">Confirmar</button>
-            <a class="btn btn-secondary" asp-controller="Inicio" asp-action="Index">Cancelar</a>
+            <div class="form-group">
+                <label>Médico</label>
+                @Html.DropDownList(
+                                "Medico",
+                                (SelectList)ViewBag.Medicos,
+                                "-- Seleccione --",
+                                new { @class = "form-control", id = "Medico" }
+                                )
+            </div>
+
+            <div class="form-group">
+                <label>Fecha</label>
+                <input type="date" name="Fecha" id="Fecha" class="form-control" />
+            </div>
+
+            <!-- Importante: SIEMPRE renderizamos el contenedor de horario; lo maneja el JS -->
+            <div class="form-group" id="grpHorario" style="display:none">
+                <label>Horario disponible</label>
+                <select class="form-control" id="Horario" name="Hora">
+                    <option value="">-- Seleccione --</option>
+                </select>
+            </div>
+
+            @* Mensaje informativo inicial (opcional) *@
+            @if (!string.IsNullOrEmpty(mensajeHorario))
+            {
+                <div class="alert alert-warning">@mensajeHorario</div>
+            }
+
+            <div class="btn-row">
+                <button type="submit" class="btn btn-primary">Confirmar</button>
+                <a class="btn btn-secondary" asp-controller="Inicio" asp-action="Index">Cancelar</a>
+            </div>
         </div>
     </div>
-</div>
+</form>
 
 @section Scripts {
     <script>
-        // Cuando cambia la especialidad, recarga la página con el parámetro para filtrar médicos
+        // --- Mantener autocompletado por querystring como antes ---
         document.getElementById('Especialidad')?.addEventListener('change', function() {
           const esp = this.value;
           const url = new URL(window.location.href);
-          if (esp) {
-            url.searchParams.set('especialidad', esp);
-          } else {
-            url.searchParams.delete('especialidad');
-          }
-          // si había idMedico, lo limpiamos porque ya no aplica al cambiar especialidad
+          if (esp) url.searchParams.set('especialidad', esp);
+          else url.searchParams.delete('especialidad');
           url.searchParams.delete('idMedico');
           window.location.href = url.toString();
         });
@@ -75,46 +72,56 @@
         document.getElementById('Medico')?.addEventListener('change', function() {
           const medicoId = this.value;
           const url = new URL(window.location.href);
-          if (medicoId) {
-            url.searchParams.set('idMedico', medicoId);
-          } else {
-            url.searchParams.delete('idMedico');
-          }
+          if (medicoId) url.searchParams.set('idMedico', medicoId);
+          else url.searchParams.delete('idMedico');
           window.location.href = url.toString();
         });
 
-        const fechaInput = document.getElementById("Fecha");
+        // --- Ocultar/mostrar horarios según fecha & cargar via AJAX ---
+        function clearHorarioAlerts(){
+          document.querySelectorAll('#grpHorario + .alert, #grpHorario .alert').forEach(a => a.remove());
+        }
+
+        const fechaInput   = document.getElementById("Fecha");
         const medicoSelect = document.getElementById("Medico");
-        const horarioContainer = document.getElementById("Horario");
+        const grpHorario   = document.getElementById("grpHorario");
+        const horarioSel   = document.getElementById("Horario");
 
-        fechaInput?.addEventListener("change", async function () {
-            const fecha = this.value;
-            const idMedico = medicoSelect.value;
+        grpHorario.style.display = "none"; // oculto al cargar
 
-            if (!fecha || !idMedico) return;
-
-            const url = `/Cliente/ObtenerHorarios?idMedico=${idMedico}&fecha=${fecha}`;
-            const response = await fetch(url);
-            const data = await response.json();
-
-            const horarioDiv = document.getElementById("Horario");
-            horarioDiv.innerHTML = ""; // limpiar
-
-            if (data.success) {
-                // llenar el dropdown con las horas
-                data.horarios.forEach(hora => {
-                    const opt = document.createElement("option");
-                    opt.value = hora;
-                    opt.textContent = hora;
-                    horarioDiv.appendChild(opt);
-                });
-            } else {
-                const alert = document.createElement("div");
-                alert.className = "alert alert-warning mt-2";
-                alert.textContent = data.mensaje;
-                horarioDiv.parentNode.appendChild(alert);
-            }
+        fechaInput?.addEventListener("change", cargarHoras);
+        medicoSelect?.addEventListener("change", function(){
+          if (fechaInput.value) cargarHoras();
+          else { grpHorario.style.display = "none"; clearHorarioAlerts(); }
         });
 
+        async function cargarHoras() {
+          clearHorarioAlerts();
+          const fecha = fechaInput.value;
+          const idMedico = medicoSelect.value;
+
+          horarioSel.innerHTML = '<option value="">-- Seleccione --</option>';
+          grpHorario.style.display = "none";
+
+          if (!fecha || !idMedico) return;
+
+          const url = `/Cliente/ObtenerHorarios?idMedico=${idMedico}&fecha=${fecha}`;
+          const res = await fetch(url);
+          const data = await res.json();
+
+          if (data.success) {
+            data.horarios.forEach(h => {
+              const opt = document.createElement("option");
+              opt.value = h; opt.textContent = h;
+              horarioSel.appendChild(opt);
+            });
+            grpHorario.style.display = "block";
+          } else {
+            const alert = document.createElement("div");
+            alert.className = "alert alert-warning mt-2";
+            alert.textContent = data.mensaje;
+            grpHorario.insertAdjacentElement('afterend', alert);
+          }
+        }
     </script>
 }

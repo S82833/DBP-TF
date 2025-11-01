@@ -35,25 +35,27 @@
                 <a asp-controller="ServiciosStaff" asp-action="Servicios" class="topbar__link">Servicios</a>
                 <a asp-controller="ServiciosStaff" asp-action="StaffMedico" class="topbar__link">Staff médico</a>
 
+                @* ===== Menú dinámico según el rol ===== *@
                 @if (userRol == 2)
                 {
+                    <!-- MÉDICO -->
                     <a asp-controller="DoctorDisponibilidades" asp-action="MisHorarios" class="topbar__link">Mis horarios</a>
+                    <a asp-controller="Cliente" asp-action="cronogramaCitas" class="topbar__link">Citas</a>
                 }
-
-                <!-- Menú Citas (visible para todos los roles logueados) -->
-                <div class="dropdown">
-                    <a class="topbar__link dropdown-toggle" href="#" id="citasDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Citas
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="citasDropdown">
-                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="agendarCita">Agendar cita</a></li>
-                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="cronogramaCitas">Cronograma de citas</a></li>
-                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="reprogramarCita">Reprogramar cita</a></li>
-                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="cancelarCita">Cancelar cita</a></li>
-                        <li><a class="dropdown-item" asp-controller="Cliente" asp-action="resumenCita">Resumen de cita</a></li>
-                    </ul>
-                </div>
+                else if (userRol == 1)
+                {
+                    <!-- PACIENTE -->
+                    <div class="dropdown">
+                        <a class="topbar__link dropdown-toggle" href="#" id="citasDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Citas
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="citasDropdown">
+                            <li><a class="dropdown-item" asp-controller="Cliente" asp-action="agendarCita">Agendar cita</a></li>
+                            <li><a class="dropdown-item" asp-controller="Cliente" asp-action="cronogramaCitas">Cronograma de citas</a></li>
+                        </ul>
+                    </div>
+                }
 
                 @if (string.IsNullOrEmpty(userName))
                 {
@@ -65,11 +67,19 @@
                 {
                     <!-- Si hay sesión iniciada -->
                     <div class="dropdown">
-                        <a class="topbar__link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="topbar__link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             @userName
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Cerrar sesión</a></li>
+                            <li>
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="m-0 p-0">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        Cerrar sesión
+                                    </button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 }
