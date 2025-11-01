@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using ProyectoDBP.Datos;
+using ProyectoDBP.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddTransient<EmailService>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

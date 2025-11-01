@@ -3,13 +3,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoDBP.Datos;
 using ProyectoDBP.Models;
+using ProyectoDBP.Services;
 
 namespace ProyectoDBP.Controllers
 {
     public class ClienteController : Controller
     {
         private readonly ApplicationDBContext _context;
-        public ClienteController(ApplicationDBContext context) => _context = context;
+        private readonly EmailService _emailService;
+
+        public ClienteController(ApplicationDBContext context, EmailService emailService)
+        {
+            _context = context;
+            _emailService = emailService;
+        }
 
         // GET /Cliente/agendarCita?especialidad=Endodoncia&idMedico=5
         public IActionResult agendarCita(string? especialidad, int? idMedico)
@@ -170,6 +177,30 @@ namespace ProyectoDBP.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+
+                // ====== Enviar correo de confirmación ======
+                if (!string.IsNullOrEmpty(userEmail))
+                {
+                    string cuerpo = $@"
+            <div style='font-family:Arial,sans-serif; color:#333;'>
+                <h2>Confirmación de Cita</h2>
+                <p>Estimado/a <strong>{userName}</strong>,</p>
+                <p>Tu cita ha sido agendada correctamente.</p>
+                <ul>
+                    <li><b>Especialidad:</b> {Especialidad}</li>
+                    <li><b>Doctor:</b> {await ObtenerNombreDoctor(Medico)}</li>
+                    <li><b>Fecha:</b> {Fecha:dd/MM/yyyy}</li>
+                    <li><b>Hora:</b> {Hora}</li>
+                </ul>
+                <p>Gracias por confiar en <strong>Odontobrass</strong>.</p>
+            </div>";
+
+                    await _emailService.EnviarCorreo(
+                        userEmail,
+                        "Confirmación de Cita - Odontobrass",
+                        cuerpo
+                    );
+                }
             }
             catch (DbUpdateException)
             {
@@ -179,6 +210,8 @@ namespace ProyectoDBP.Controllers
             }
 
             TempData["Success"] = $"Cita reservada para {fechaHora:dd/MM/yyyy HH:mm}.";
+
+
             return RedirectToAction("cronogramaCitas", "Cliente");
         }
 
@@ -303,16 +336,50 @@ namespace ProyectoDBP.Controllers
             var (ok, rol, userId, doctorId) = await GetPermisoSobreCita(id);
             if (!ok) return Forbid();
 
-            var cita = await _context.Citas.FindAsync(id);
+            var cita = await _context.Citas
+                .Include(c => c.Usuario)
+                .Include(c => c.Servicio)
+                .Include(c => c.StaffMedico)
+                .FirstOrDefaultAsync(c => c.IdCita == id);
+
             if (cita == null) return NotFound();
 
             // validación de autorización
             if (!PuedeOperar(rol, userId, doctorId, cita)) return Forbid();
 
+            // eliminamos la cita
             _context.Citas.Remove(cita);
             await _context.SaveChangesAsync();
 
-            TempData["Success"] = "La cita fue cancelada.";
+            // ====== Enviar correo de cancelación ======
+            var userEmail = cita.Usuario?.Correo;
+            var userName = cita.Usuario?.Nombre;
+
+            if (!string.IsNullOrEmpty(userEmail))
+            {
+                string cuerpo = $@"
+        <div style='font-family:Arial,sans-serif; color:#333;'>
+            <h2>Cancelación de Cita</h2>
+            <p>Estimado/a <strong>{userName}</strong>,</p>
+            <p>Tu cita ha sido cancelada correctamente.</p>
+            <ul>
+                <li><b>Especialidad:</b> {cita.Servicio?.Nombre}</li>
+                <li><b>Doctor:</b> {cita.StaffMedico?.Nombre} {cita.StaffMedico?.Apellido}</li>
+                <li><b>Fecha original:</b> {cita.Fecha:dd/MM/yyyy HH:mm}</li>
+            </ul>
+            <p>Si fue un error, puedes reprogramarla desde tu cuenta.</p>
+            <p>Atentamente,<br><strong>Odontobrass</strong></p>
+        </div>";
+
+                await _emailService.EnviarCorreo(
+                    userEmail,
+                    "Cancelación de Cita - Odontobrass",
+                    cuerpo
+                );
+            }
+            // ==========================================
+
+            TempData["Success"] = "La cita fue cancelada y se notificó por correo.";
             return RedirectToAction(nameof(cronogramaCitas));
         }
 
@@ -359,7 +426,12 @@ namespace ProyectoDBP.Controllers
             var (ok, rol, userId, doctorId) = await GetPermisoSobreCita(id);
             if (!ok) return Forbid();
 
-            var cita = await _context.Citas.FindAsync(id);
+            var cita = await _context.Citas
+                .Include(c => c.Usuario)
+                .Include(c => c.Servicio)
+                .Include(c => c.StaffMedico)
+                .FirstOrDefaultAsync(c => c.IdCita == id);
+
             if (cita == null) return NotFound();
             if (!PuedeOperar(rol, userId, doctorId, cita)) return Forbid();
 
@@ -381,10 +453,39 @@ namespace ProyectoDBP.Controllers
                 return RedirectToAction(nameof(ReprogramarCita), new { id });
             }
 
+            // Guardar nueva fecha
             cita.Fecha = nuevaFechaHora;
             await _context.SaveChangesAsync();
 
-            TempData["Success"] = "La cita fue reprogramada.";
+            // ====== Enviar correo de reprogramación ======
+            var userEmail = cita.Usuario?.Correo;
+            var userName = cita.Usuario?.Nombre;
+
+            if (!string.IsNullOrEmpty(userEmail))
+            {
+                string cuerpo = $@"
+        <div style='font-family:Arial,sans-serif; color:#333;'>
+            <h2>Reprogramación de Cita</h2>
+            <p>Estimado/a <strong>{userName}</strong>,</p>
+            <p>Tu cita ha sido reprogramada con éxito. Aquí tienes los nuevos detalles:</p>
+            <ul>
+                <li><b>Especialidad:</b> {cita.Servicio?.Nombre}</li>
+                <li><b>Doctor:</b> {cita.StaffMedico?.Nombre} {cita.StaffMedico?.Apellido}</li>
+                <li><b>Nueva Fecha:</b> {cita.Fecha:dd/MM/yyyy}</li>
+                <li><b>Nueva Hora:</b> {cita.Fecha:HH:mm}</li>
+            </ul>
+            <p>Gracias por confiar en <strong>Odontobrass</strong>.</p>
+        </div>";
+
+                await _emailService.EnviarCorreo(
+                    userEmail,
+                    "Tu cita ha sido reprogramada - Odontobrass",
+                    cuerpo
+                );
+            }
+            // =============================================
+
+            TempData["Success"] = "La cita fue reprogramada y se notificó por correo.";
             return RedirectToAction(nameof(cronogramaCitas));
         }
 
@@ -413,6 +514,16 @@ namespace ProyectoDBP.Controllers
             if (rol == 2) return doctorId != null && c.IdStaffMedico == doctorId.Value;
             return false;
         }
+
+        private async Task<string> ObtenerNombreDoctor(int idMedico)
+        {
+            var medico = await _context.StaffMedico
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.IdStaffMedico == idMedico);
+
+            return medico != null ? $"{medico.Nombre} {medico.Apellido}" : "No identificado";
+        }
+
 
 
     }

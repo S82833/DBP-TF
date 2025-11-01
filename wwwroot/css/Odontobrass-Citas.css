@@ -33,7 +33,7 @@ h2 {
 }
 
 /* Estilos para Formularios (agendarCita.cshtml, cancelarCita.cshtml, etc.) */
-form {
+form:not(.d-inline) {
     background: #ffffff;
     padding: 30px;
     border-radius: 10px;
@@ -317,6 +317,39 @@ td.acciones .btn {
 td.acciones {
     white-space: nowrap;
 }
+
+/* ==== Corrección botones del cronograma ==== */
+.cronograma td.acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+    .cronograma td.acciones .btn {
+        display: inline-block !important;
+        width: auto !important;
+        padding: 0.375rem 0.75rem !important; /* tamaño normal bootstrap */
+        font-size: 0.9rem !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+        flex: none !important;
+        margin: 0 !important;
+    }
+
+    /* Colores normales */
+    .cronograma td.acciones .btn-primary {
+        background-color: #0d6efd !important;
+        border-color: #0d6efd !important;
+        color: #fff !important;
+    }
+
+    .cronograma td.acciones .btn-danger {
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+        color: #fff !important;
+    }
 
 
 

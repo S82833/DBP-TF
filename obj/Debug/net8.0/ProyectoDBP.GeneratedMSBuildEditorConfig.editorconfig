@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoDBP
 build_property.RootNamespace = ProyectoDBP
-build_property.ProjectDir = C:\Users\svald\OneDrive - Universidad San Ignacio de Loyola\Usil tareas 2025-02\Desarrollo basad en plataformas\Proyecto-DBP GRUPO 4\Avance jueves 30 de octubre\DBP-TF-main\
+build_property.ProjectDir = C:\Users\simon\Desktop\DBP-TF\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\svald\OneDrive - Universidad San Ignacio de Loyola\Usil tareas 2025-02\Desarrollo basad en plataformas\Proyecto-DBP GRUPO 4\Avance jueves 30 de octubre\DBP-TF-main
+build_property.MSBuildProjectDirectory = C:\Users\simon\Desktop\DBP-TF
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Account/Login.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Account/Register.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Cliente/agendarCita.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Cliente/agendarCita.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxhZ2VuZGFyQ2l0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Cliente/cancelarCita.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Cliente/cancelarCita.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxjYW5jZWxhckNpdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Cliente/cronogramaCitas.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Cliente/cronogramaCitas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxjcm9ub2dyYW1hQ2l0YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Cliente/reprogramarCita.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Cliente/reprogramarCita.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxyZXByb2dyYW1hckNpdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Cliente/resumenCita.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Cliente/resumenCita.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxyZXN1bWVuQ2l0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/DoctorDisponibilidades/Gestionar.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/DoctorDisponibilidades/Gestionar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yRGlzcG9uaWJpbGlkYWRlc1xHZXN0aW9uYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/DoctorDisponibilidades/Index.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/DoctorDisponibilidades/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yRGlzcG9uaWJpbGlkYWRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Inicio/Index.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Inicio/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/ServiciosStaff/Medico.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/ServiciosStaff/Medico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zU3RhZmZcTWVkaWNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/ServiciosStaff/Servicios.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/ServiciosStaff/Servicios.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zU3RhZmZcU2VydmljaW9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/ServiciosStaff/StaffMedico.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/ServiciosStaff/StaffMedico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zU3RhZmZcU3RhZmZNZWRpY28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Shared/Error.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/_ViewImports.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/_ViewStart.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/svald/OneDrive - Universidad San Ignacio de Loyola/Usil tareas 2025-02/Desarrollo basad en plataformas/Proyecto-DBP GRUPO 4/Avance jueves 30 de octubre/DBP-TF-main/Views/Shared/_Layout.cshtml]
+[C:/Users/simon/Desktop/DBP-TF/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ky2a1kkgzw
