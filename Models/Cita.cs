@@ -19,6 +19,8 @@ namespace ProyectoDBP.Models
 
         public DateTime Fecha { get; set; }
 
+        public string? Comentarios { get; set; }
+
         // Navegación
         public virtual Usuario Usuario { get; set; }
         public virtual Servicio Servicio { get; set; }

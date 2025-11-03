@@ -1,0 +1,36 @@
+﻿@model ProyectoDBP.Models.Cita
+@{
+    ViewData["Title"] = "Comentarios de la cita";
+    bool esMedico = ViewBag.EsMedico == true;
+}
+
+<link rel="stylesheet" href="~/css/Odontobrass-Citas.css" />
+
+<div class="container section">
+    <h2>Comentarios de la cita</h2>
+    <p><strong>Paciente:</strong> @Model.Usuario.Nombre</p>
+    <p><strong>Servicio:</strong> @Model.Servicio.Nombre</p>
+    <p><strong>Fecha:</strong> @Model.Fecha.ToString("dd/MM/yyyy HH:mm")</p>
+
+    @if (esMedico)
+    {
+        <form asp-action="GuardarComentario" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.IdCita" />
+            <div class="form-group">
+                <label for="comentarios">Escribe tus comentarios:</label>
+                <textarea class="form-control" name="comentarios" id="comentarios" rows="5">@Model.Comentarios</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Guardar comentario</button>
+        </form>
+    }
+    else
+    {
+        <div class="form-group">
+            <label>Comentarios del doctor:</label>
+            <textarea class="form-control" rows="5" readonly>@Model.Comentarios</textarea>
+        </div>
+    }
+
+    <a asp-action="cronogramaCitas" class="btn btn-secondary mt-3">Volver</a>
+</div>

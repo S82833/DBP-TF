@@ -524,6 +524,37 @@ namespace ProyectoDBP.Controllers
             return medico != null ? $"{medico.Nombre} {medico.Apellido}" : "No identificado";
         }
 
+        // GET: Cliente/ComentariosCita/5
+        public async Task<IActionResult> ComentariosCita(int id)
+        {
+            var cita = await _context.Citas
+                .Include(c => c.Usuario)
+                .Include(c => c.StaffMedico)
+                .Include(c => c.Servicio)
+                .FirstOrDefaultAsync(c => c.IdCita == id);
+
+            if (cita == null) return NotFound();
+
+            ViewBag.EsMedico = HttpContext.Session.GetInt32("UserRol") == 2; // 2 = Médico (ajusta según tu sistema)
+            return View(cita);
+        }
+
+        // POST: Cliente/GuardarComentario
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> GuardarComentario(int id, string comentarios)
+        {
+            var cita = await _context.Citas.FindAsync(id);
+            if (cita == null) return NotFound();
+
+            cita.Comentarios = comentarios;
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Comentario guardado correctamente.";
+            return RedirectToAction(nameof(cronogramaCitas));
+        }
+
+
 
 
     }

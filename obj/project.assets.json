@@ -4236,11 +4236,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simon\\Desktop\\DBP-TF\\ProyectoDBP.csproj",
+      "projectUniqueName": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\ProyectoDBP.csproj",
       "projectName": "ProyectoDBP",
-      "projectPath": "C:\\Users\\simon\\Desktop\\DBP-TF\\ProyectoDBP.csproj",
+      "projectPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\ProyectoDBP.csproj",
       "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simon\\Desktop\\DBP-TF\\obj\\",
+      "outputPath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4317,7 +4317,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
