@@ -152,7 +152,7 @@ namespace ProyectoDBP.Controllers
                 return View("Gestionar", vmHoras);
             }
 
-            // 6) Validar traslape (primero a memoria -> luego Any() con cálculo en C#)
+            // 6) Validar traslape 
             var disponibilidades = await _context.DoctorDisponibilidades
                 .Where(d => d.IdStaffMedico == form.IdStaffMedico && d.DiaSemana == form.DiaSemana)
                 .AsNoTracking()
@@ -162,7 +162,7 @@ namespace ProyectoDBP.Controllers
             {
                 var ie = TimeSpan.Parse(d.HoraInicio);
                 var fe = TimeSpan.Parse(d.HoraFin);
-                return hi < fe && ie < hf; // traslape si se intersectan abiertos
+                return hi < fe && ie < hf; 
             });
 
             if (existeTraslape)

@@ -25,7 +25,7 @@ namespace ProyectoDBP.Controllers
             return View();
         }
 
-        // POST: /Account/Login  (SIN ViewModel)
+        // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([FromForm] string Email, [FromForm] string Password, string? returnUrl)
@@ -37,7 +37,7 @@ namespace ProyectoDBP.Controllers
                 return View();
             }
 
-            // Validación simple (como acordamos, sin hash)
+            // Validación simple 
             var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(u => u.Correo == Email && u.Contraseña == Password);
 

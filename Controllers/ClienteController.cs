@@ -294,7 +294,7 @@ namespace ProyectoDBP.Controllers
                 if (doc != null) doctorId = doc.IdStaffMedico;
             }
 
-            // IMPORTANTE: usar las navegaciones reales: Usuario, Servicio, StaffMedico
+            
             var query = _context.Citas
                 .Include(c => c.Usuario)
                 .Include(c => c.Servicio)
@@ -322,7 +322,7 @@ namespace ProyectoDBP.Controllers
                 .ToListAsync();
 
             ViewBag.EsMedico = (rol == 2);
-            return View("cronogramaCitas", citas); // tu vista puede ser dinámica; si luego quieres fuertemente tipada, armamos un ViewModel.
+            return View("cronogramaCitas", citas); 
         }
 
 
@@ -441,7 +441,7 @@ namespace ProyectoDBP.Controllers
                 return RedirectToAction(nameof(ReprogramarCita), new { id });
             }
 
-            // Validar contra duplicado (misma regla que crear)
+            
             var ts = TimeSpan.Parse(NuevaHora);
             var nuevaFechaHora = NuevaFecha.Date.Add(ts);
 

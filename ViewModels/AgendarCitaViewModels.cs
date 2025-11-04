@@ -13,7 +13,6 @@ namespace ProyectoDBP.ViewModels
         // Hora seleccionada en el <select> (formato "HH:mm", ej: "09:00")
         public string Hora { get; set; } = "";
 
-        // (Opcional) para mostrar combos en la vista si decides usar asp-items
         public IEnumerable<SelectListItem>? Especialidades { get; set; }
         public IEnumerable<SelectListItem>? Medicos { get; set; }
         public IEnumerable<string>? Horarios { get; set; }

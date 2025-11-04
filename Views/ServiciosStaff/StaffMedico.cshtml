@@ -14,7 +14,7 @@
     <div class="staff-grid">
         @foreach (var medico in Model)
         {
-            // Determinar la imagen según especialidad (usa tus nombres exactos)
+            
             var img = medico.Especialidad switch
             {
                 "Ortodoncia" => Url.Content("~/fotos/Medico_Ortodoncia.jpg"),
