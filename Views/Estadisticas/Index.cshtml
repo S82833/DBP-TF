@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Estadísticas";
+    var fechas = ViewBag.Fechas as List<string>;
+    var cantidades = ViewBag.Cantidades as List<int>;
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <div class="row g-3">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center p-3">
+                <h5>Total Pacientes</h5>
+                <h2 class="text-primary">@ViewBag.TotalPacientes</h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center p-3">
+                <h5>Citas del mes</h5>
+                <h2 class="text-success">@ViewBag.TotalCitasMes</h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center p-3">
+                <h5>Servicio más solicitado</h5>
+                <h4>@ViewBag.ServicioPopular</h4>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm text-center p-3">
+                <h5>Doctor con más citas</h5>
+                <h4>@ViewBag.DoctorActivo</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- GRÁFICO -->
+    <div class="card mt-5 p-4 shadow-sm">
+        <h4 class="text-center mb-3">Pacientes atendidos por día (Últimos 30 días)</h4>
+        <canvas id="graficoCitas" height="100"></canvas>
+    </div>
+
+</div>
+
+<!-- SCRIPTS DEL GRÁFICO -->
+<script>
+    const labels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(fechas));
+    const dataValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(cantidades));
+
+    const ctx = document.getElementById('graficoCitas').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Citas por día',
+                data: dataValues,
+                borderColor: 'rgba(0, 123, 255, 1)',
+                backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 4
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

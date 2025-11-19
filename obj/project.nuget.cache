@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JUR0pQm0ozU=",
+  "dgSpecHash": "XDmOo/jShmg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\Desktop\\USIL\\CICLO 7\\DBP\\ProyectoDBP\\ProyectoDBP.csproj",
+  "projectFilePath": "C:\\Users\\simon\\Desktop\\DBP-TF\\ProyectoDBP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simon\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -49,6 +49,7 @@
     "C:\\Users\\simon\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\mimekit\\4.14.0\\mimekit.4.14.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\simon\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",
